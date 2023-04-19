@@ -154,5 +154,25 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by EDRParser#joined.
+    def visitJoined(self, ctx:EDRParser.JoinedContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#joined_helper.
+    def visitJoined_helper(self, ctx:EDRParser.Joined_helperContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#joined_letters.
+    def visitJoined_letters(self, ctx:EDRParser.Joined_lettersContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#symbol.
+    def visitSymbol(self, ctx:EDRParser.SymbolContext):
+        return self.visitChildren(ctx)
+
+
 
 del EDRParser

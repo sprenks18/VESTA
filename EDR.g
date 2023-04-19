@@ -43,7 +43,7 @@ word: word chunk | chunk;
 
 // The order of these matters (lost chunk is technically recursive [TODO - fix this])
 chunk: normal_chunk | under_chunk | dot_chunk | erased | lost_chunk
-     | gap_unknown | illegible | surplus;
+     | gap_unknown | illegible | surplus | joined | symbol;
 
 normal_chunk: LETTER normal_chunk | LETTER;
 
@@ -83,6 +83,15 @@ lost_lines: lost_lines NEWLINE lost_line
 
 surplus: L_CURLY word R_CURLY; 
 
+joined: joined_helper;
+
+joined_helper: joined_letters CIRCUMFLEX LETTER
+             | joined_letters;
+
+joined_letters: LETTER CIRCUMFLEX LETTER;
+
+symbol: L_PAREN L_PAREN word R_PAREN R_PAREN;
+
 // Tokens
 L_PAREN: '(';
 R_PAREN: ')';
@@ -95,7 +104,7 @@ QUESTION: '?';
 DASH: '-';
 PLUS: '+';
 UNDERLINE: '&#818;';
-CIRUMFLEX: '\u0302';
+CIRCUMFLEX: '&#770;';
 DOT: '&#803;';
 LETTER : [A-Za-z]
        | '&#9'('13'|'14'|'15'|'16'|'17'|'18'|'19'|'20'|
@@ -105,5 +114,5 @@ LETTER : [A-Za-z]
                '53'|'54'|'55'|'56'|'57'|'58'|'59'|'60'|
                '61'|'62'|'63'|'64'|'65'|'66'|'67'|'68'|'69')';';
 SPACE: [ \t]+;
-NEWLINE: [\n\r]+ | '<BR>' | '<br>';
+NEWLINE: [\n\r]+ | [ ]*'<BR>'[ ]* | [ ]*'<br>'[ ]*;
 PUNCT: '.' | ',';

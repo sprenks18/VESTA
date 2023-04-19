@@ -1,3 +1,9 @@
+"""
+This file contains test cases for the different standards recognized by the parser.
+As interesting and complicated examples are found they should be added here.
+Examples that break the parser should be added here before and after the fix is applied.
+"""
+
 from main import translate
 
 # Test newlines (\n)
@@ -14,6 +20,11 @@ assert translate(content) == expected, "Newline (br) failed"
 content  = "Mortus<BR>Ercolanius"
 expected = "<lb n=\"1\"/>\nMortus\n<lb n=\"2\"/>\nErcolanius"
 assert translate(content) == expected, "Newline (BR) failed"
+
+# Test newlines (<BR> with spaces)
+content  = "Mortus <BR> Ercolanius"
+expected = "<lb n=\"1\"/>\nMortus\n<lb n=\"2\"/>\nErcolanius"
+assert translate(content) == expected, "Newline (BR with spaces) failed"
 
 # Test abbreviation
 content  = "C(aius) Vettius Firmus"
@@ -133,10 +144,24 @@ assert translate(content) == expected, "Greek uppercase failed"
 # Test Greek lowercase
 content = "&#945;&#950;&#948;"
 expected = "<lb n=\"1\"/>\nαζδ"
-print(translate(content))
 assert translate(content) == expected, "Greek lowercase failed"
 
 # Test Greek missing
 content = "&#945;&#818;"
 expected = "<lb n=\"1\"/>\n<supplied reason=\"undefined\" evidence=\"previouseditor\">α</supplied>"
 assert translate(content) == expected, "Greek missing failed"
+
+# Test joined letters
+content = "M&#770;a&#770;i"
+expected = "<lb n=\"1\"/>\n<hi rend=\"ligature\">Mai</hi>"
+assert translate(content) == expected, "Joined letters failed"
+
+# Test joined letters in abbreviation
+content = "M&#770;a&#770;i(as)"
+expected = "<lb n=\"1\"/>\n<expan><abbr><hi rend=\"ligature\">Mai</hi></abbr><ex>as</ex></expan>"
+assert translate(content) == expected, "Joined letters failed"
+
+# Test symbol
+content = "((denarius))"
+expected = "<lb n=\"1\"/>\n<expan><abbr><am><g type=\"denarius\"/></am></abbr><ex>denarius</ex></expan>"
+assert translate(content) == expected, "Symbol failed"

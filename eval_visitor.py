@@ -25,6 +25,8 @@ ILLEGIBLE = "<gap reason=\"illegible\" quantity=\"%d\" unit=\"character\"/>"
 UNKNOWN_LOST_LINES = "<gap reason=\"lost\" extent=\"unknown\" unit=\"line\"/>"
 LOST_LINES = "<gap reason=\"lost\" extent=\"%d\" unit=\"line\"/>"
 SURPLUS = "<surplus>%s</surplus>"
+JOINED = "<hi rend=\"ligature\">%s</hi>"
+SYMBOL = "<expan><abbr><am><g type=\"%s\"/></am></abbr><ex>%s</ex></expan>"
 
 class EvalVisitor(EDRVisitor):
 
@@ -227,3 +229,27 @@ class EvalVisitor(EDRVisitor):
     def visitSurplus(self, ctx:EDRParser.SurplusContext):
         l = list(ctx.getChildren())
         return SURPLUS % (self.visit(l[1]),)
+    
+    # Visit a parse tree produced by EDRParser#joined.
+    def visitJoined(self, ctx:EDRParser.JoinedContext):
+        l = list(ctx.getChildren())
+        return JOINED % (self.visit(l[0]),)
+
+    # Visit a parse tree produced by EDRParser#joined_helper.
+    def visitJoined_helper(self, ctx:EDRParser.Joined_helperContext):
+        l = list(ctx.getChildren())
+        if len(l) == 3:
+            return self.visit(l[0]) + l[2].getText()
+        else:
+            return self.visit(l[0])
+    
+    # Visit a parse tree produced by EDRParser#joined_letters.
+    def visitJoined_letters(self, ctx:EDRParser.Joined_lettersContext):
+        l = list(ctx.getChildren())
+        return l[0].getText() + l[2].getText()
+    
+    # Visit a parse tree produced by EDRParser#symbol.
+    def visitSymbol(self, ctx:EDRParser.SymbolContext):
+        l = list(ctx.getChildren())
+        sym = self.visit(l[2])
+        return SYMBOL % (sym,sym)
