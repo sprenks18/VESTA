@@ -14,8 +14,18 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by EDRParser#inscription.
-    def visitInscription(self, ctx:EDRParser.InscriptionContext):
+    # Visit a parse tree produced by EDRParser#inscription1.
+    def visitInscription1(self, ctx:EDRParser.Inscription1Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#inscription2.
+    def visitInscription2(self, ctx:EDRParser.Inscription2Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#row.
+    def visitRow(self, ctx:EDRParser.RowContext):
         return self.visitChildren(ctx)
 
 
@@ -101,6 +111,46 @@ class EDRVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by EDRParser#dot_helper.
     def visitDot_helper(self, ctx:EDRParser.Dot_helperContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#erased.
+    def visitErased(self, ctx:EDRParser.ErasedContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_chunk.
+    def visitLost_chunk(self, ctx:EDRParser.Lost_chunkContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#gap_unknown.
+    def visitGap_unknown(self, ctx:EDRParser.Gap_unknownContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#illegible.
+    def visitIllegible(self, ctx:EDRParser.IllegibleContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_lines_unknown.
+    def visitLost_lines_unknown(self, ctx:EDRParser.Lost_lines_unknownContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_line.
+    def visitLost_line(self, ctx:EDRParser.Lost_lineContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_lines.
+    def visitLost_lines(self, ctx:EDRParser.Lost_linesContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#surplus.
+    def visitSurplus(self, ctx:EDRParser.SurplusContext):
         return self.visitChildren(ctx)
 
 

@@ -6,6 +6,8 @@ else:
     from EDRVisitor import EDRVisitor
     from EDRParser import EDRParser
 
+from conversion import greek_letters_dict
+
 LINE_COUNT = "<lb n=\"%d\"/>\n"
 MISSPELL = "<choice><reg>%s</reg><orig>%s</orig></choice>"
 MISSPELL_UNCERTAIN = "<choice><reg cert=\"low\">%s</reg><orig>%s</orig></choice>"
@@ -15,6 +17,14 @@ ABBREV_UNCERTAIN = "<expan><abbr>%s</abbr><ex cert=\"low\">%s</ex></expan>"
 ABBREV_UNKNOWN = "<abbr>%s</abbr>"
 MISSING_CHARS = "<supplied reason=\"undefined\" evidence=\"previouseditor\">%s</supplied>"
 UNCLEAR = "<unclear>%s</unclear>"
+LOST = "<supplied reason=\"lost\">%s</supplied>"
+LOST_UNCERTAIN = "<supplied reason=\"lost\" cert=\"low\">%s</supplied>"
+GAP_UNKNOWN = "<gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+ERASED = "<del rend=\"erasure\"><supplied reason=\"lost\">%s</supplied></del>"
+ILLEGIBLE = "<gap reason=\"illegible\" quantity=\"%d\" unit=\"character\"/>"
+UNKNOWN_LOST_LINES = "<gap reason=\"lost\" extent=\"unknown\" unit=\"line\"/>"
+LOST_LINES = "<gap reason=\"lost\" extent=\"%d\" unit=\"line\"/>"
+SURPLUS = "<surplus>%s</surplus>"
 
 class EvalVisitor(EDRVisitor):
 
@@ -22,18 +32,32 @@ class EvalVisitor(EDRVisitor):
         self._count = 1
         EDRVisitor.__init__(self)
 
+    def getLetter(self, letter):
+        if letter in greek_letters_dict:
+            return greek_letters_dict[letter]
+        else:
+            return letter
+
     def visitRoot(self, ctx:EDRParser.RootContext):
         l = list(ctx.getChildren())
         return LINE_COUNT % (self._count) + self.visit(l[0])
-
-    # Visit a parse tree produced by EDRParser#inscription.
-    def visitInscription(self, ctx:EDRParser.InscriptionContext):
+            
+    # Visit a parse tree produced by EDRParser#inscription1.
+    def visitInscription1(self, ctx:EDRParser.Inscription1Context):
         l = list(ctx.getChildren())
-        if len(l) == 3:
-            self._count += 1
-            return self.visit(l[0]) + "\n" + LINE_COUNT % (self._count,) + self.visit(l[2])
-        else:
-            return self.visit(l[0])
+        self._count += 1
+        return self.visit(l[0]) + "\n" + LINE_COUNT % (self._count,) + self.visit(l[2])
+
+
+    # Visit a parse tree produced by EDRParser#inscription2.
+    def visitInscription2(self, ctx:EDRParser.Inscription2Context):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
+    
+    # Visit a parse tree produced by EDRParser#row.
+    def visitRow(self, ctx:EDRParser.RowContext):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
 
     # Visit a parse tree produced by EDRParser#line.
     def visitLine(self, ctx:EDRParser.LineContext):
@@ -129,17 +153,17 @@ class EvalVisitor(EDRVisitor):
     def visitNormal_chunk(self, ctx:EDRParser.Normal_chunkContext):
         l = list(ctx.getChildren())
         if len(l) == 2:
-            return l[0].getText() + self.visit(l[1])
+            return self.getLetter(l[0].getText()) + self.visit(l[1])
         else:
-            return l[0].getText()
+            return self.getLetter(l[0].getText())
         
     # Visit a parse tree produced by EDRParser#under_helper.
     def visitUnder_helper(self, ctx:EDRParser.Under_helperContext):
         l = list(ctx.getChildren())
         if len(l) == 3:
-            return l[0].getText() + self.visit(l[2])
+            return self.getLetter(l[0].getText()) + self.visit(l[2])
         else:
-            return l[0].getText()
+            return self.getLetter(l[0].getText())
 
     # Visit a parse tree produced by EDRParser#under_chunk.
     def visitUnder_chunk(self, ctx:EDRParser.Under_chunkContext):
@@ -155,8 +179,51 @@ class EvalVisitor(EDRVisitor):
     def visitDot_helper(self, ctx:EDRParser.Dot_helperContext):
         l = list(ctx.getChildren())
         if len(l) == 3:
-            return self.visit(l[0]) + l[1].getText()
+            return self.visit(l[0]) + self.getLetter(l[1].getText())
         else:
-            return l[0].getText()
+            return self.getLetter(l[0].getText())
+        
+    # Visit a parse tree produced by EDRParser#lost_chunk.
+    def visitLost_chunk(self, ctx:EDRParser.Lost_chunkContext):
+        l = list(ctx.getChildren())
+        if len(l) == 3:
+            return LOST % (self.visit(l[1]),)
+        elif len(l) == 4:
+            return LOST_UNCERTAIN % (self.visit(l[1]))
+        
+    # Visit a parse tree produced by EDRParser#gap_unknown.
+    def visitGap_unknown(self, ctx:EDRParser.Gap_unknownContext):
+        return GAP_UNKNOWN
+    
+    # Visit a parse tree produced by EDRParser#erased.
+    def visitErased(self, ctx:EDRParser.ErasedContext):
+        l = list(ctx.getChildren())
+        return ERASED % (self.visit(l[2]),)
+    
+    # Visit a parse tree produced by EDRParser#illegible.
+    def visitIllegible(self, ctx:EDRParser.IllegibleContext):
+        l = list(ctx.getChildren())
+        return ILLEGIBLE % (len(ctx.getText()))
 
+    # Visit a parse tree produced by EDRParser#lost_lines_unknown.
+    def visitLost_lines_unknown(self, ctx:EDRParser.Lost_lines_unknownContext):
+        return UNKNOWN_LOST_LINES
+    
+    # Visit a parse tree produced by EDRParser#lost_line.
+    def visitLost_line(self, ctx:EDRParser.Lost_lineContext):
+        l = list(ctx.getChildren())
+        return 1
 
+    # Visit a parse tree produced by EDRParser#lost_lines.
+    def visitLost_lines(self, ctx:EDRParser.Lost_linesContext):
+        l = list(ctx.getChildren())
+        if len(l) == 1:
+            return LOST_LINES % (1,)
+        else:
+            d = int(self.visit(l[0]).split('"')[3]) + 1
+            return LOST_LINES % (d,)
+        
+    # Visit a parse tree produced by EDRParser#surplus.
+    def visitSurplus(self, ctx:EDRParser.SurplusContext):
+        l = list(ctx.getChildren())
+        return SURPLUS % (self.visit(l[1]),)

@@ -10,64 +10,105 @@ else:
 
 def serializedATN():
     return [
-        4,1,14,178,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,17,294,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
-        2,14,7,14,2,15,7,15,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,3,1,41,8,1,1,
-        2,1,2,1,2,1,2,1,2,3,2,48,8,2,1,3,1,3,1,3,1,3,3,3,54,8,3,1,4,1,4,
-        1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,5,
-        1,5,1,5,1,5,1,5,3,5,78,8,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,
-        6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,
-        6,3,6,106,8,6,1,7,1,7,1,7,1,7,1,7,3,7,113,8,7,1,7,1,7,1,7,1,7,1,
-        7,1,7,1,7,1,7,5,7,123,8,7,10,7,12,7,126,9,7,1,8,1,8,1,8,1,8,1,8,
-        3,8,133,8,8,1,9,1,9,1,9,1,9,1,9,5,9,140,8,9,10,9,12,9,143,9,9,1,
-        10,1,10,1,10,3,10,148,8,10,1,11,1,11,1,11,3,11,153,8,11,1,12,1,12,
-        1,13,1,13,1,13,1,13,1,13,3,13,162,8,13,1,14,1,14,1,15,1,15,1,15,
-        1,15,1,15,1,15,1,15,5,15,173,8,15,10,15,12,15,176,9,15,1,15,0,3,
-        14,18,30,16,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,0,0,180,0,
-        32,1,0,0,0,2,40,1,0,0,0,4,47,1,0,0,0,6,53,1,0,0,0,8,55,1,0,0,0,10,
-        77,1,0,0,0,12,105,1,0,0,0,14,112,1,0,0,0,16,132,1,0,0,0,18,134,1,
-        0,0,0,20,147,1,0,0,0,22,152,1,0,0,0,24,154,1,0,0,0,26,161,1,0,0,
-        0,28,163,1,0,0,0,30,165,1,0,0,0,32,33,3,2,1,0,33,34,5,0,0,1,34,1,
-        1,0,0,0,35,36,3,4,2,0,36,37,5,13,0,0,37,38,3,2,1,0,38,41,1,0,0,0,
-        39,41,3,4,2,0,40,35,1,0,0,0,40,39,1,0,0,0,41,3,1,0,0,0,42,48,3,6,
-        3,0,43,44,3,6,3,0,44,45,5,12,0,0,45,46,3,4,2,0,46,48,1,0,0,0,47,
-        42,1,0,0,0,47,43,1,0,0,0,48,5,1,0,0,0,49,54,3,10,5,0,50,54,3,8,4,
-        0,51,54,3,12,6,0,52,54,3,16,8,0,53,49,1,0,0,0,53,50,1,0,0,0,53,51,
-        1,0,0,0,53,52,1,0,0,0,54,7,1,0,0,0,55,56,5,1,0,0,56,57,5,1,0,0,57,
-        58,5,5,0,0,58,59,3,14,7,0,59,60,5,2,0,0,60,61,5,2,0,0,61,9,1,0,0,
-        0,62,63,3,18,9,0,63,64,5,12,0,0,64,65,5,1,0,0,65,66,5,5,0,0,66,67,
-        3,16,8,0,67,68,5,2,0,0,68,78,1,0,0,0,69,70,3,18,9,0,70,71,5,12,0,
-        0,71,72,5,1,0,0,72,73,5,5,0,0,73,74,3,16,8,0,74,75,5,6,0,0,75,76,
-        5,2,0,0,76,78,1,0,0,0,77,62,1,0,0,0,77,69,1,0,0,0,78,11,1,0,0,0,
-        79,80,3,18,9,0,80,81,5,1,0,0,81,82,3,16,8,0,82,83,5,2,0,0,83,106,
-        1,0,0,0,84,85,3,18,9,0,85,86,5,1,0,0,86,87,3,16,8,0,87,88,5,6,0,
-        0,88,89,5,2,0,0,89,106,1,0,0,0,90,91,3,18,9,0,91,92,5,1,0,0,92,93,
-        5,7,0,0,93,94,5,7,0,0,94,95,5,7,0,0,95,96,5,2,0,0,96,106,1,0,0,0,
-        97,98,3,18,9,0,98,99,5,1,0,0,99,100,5,7,0,0,100,101,5,7,0,0,101,
-        102,5,7,0,0,102,103,5,6,0,0,103,104,5,2,0,0,104,106,1,0,0,0,105,
-        79,1,0,0,0,105,84,1,0,0,0,105,90,1,0,0,0,105,97,1,0,0,0,106,13,1,
-        0,0,0,107,108,6,7,-1,0,108,109,3,18,9,0,109,110,5,14,0,0,110,113,
-        1,0,0,0,111,113,3,18,9,0,112,107,1,0,0,0,112,111,1,0,0,0,113,124,
-        1,0,0,0,114,115,10,4,0,0,115,116,5,12,0,0,116,117,3,18,9,0,117,118,
-        5,14,0,0,118,123,1,0,0,0,119,120,10,3,0,0,120,121,5,12,0,0,121,123,
-        3,18,9,0,122,114,1,0,0,0,122,119,1,0,0,0,123,126,1,0,0,0,124,122,
-        1,0,0,0,124,125,1,0,0,0,125,15,1,0,0,0,126,124,1,0,0,0,127,128,3,
-        18,9,0,128,129,5,12,0,0,129,130,3,16,8,0,130,133,1,0,0,0,131,133,
-        3,18,9,0,132,127,1,0,0,0,132,131,1,0,0,0,133,17,1,0,0,0,134,135,
-        6,9,-1,0,135,136,3,20,10,0,136,141,1,0,0,0,137,138,10,2,0,0,138,
-        140,3,20,10,0,139,137,1,0,0,0,140,143,1,0,0,0,141,139,1,0,0,0,141,
-        142,1,0,0,0,142,19,1,0,0,0,143,141,1,0,0,0,144,148,3,22,11,0,145,
-        148,3,24,12,0,146,148,3,28,14,0,147,144,1,0,0,0,147,145,1,0,0,0,
-        147,146,1,0,0,0,148,21,1,0,0,0,149,150,5,11,0,0,150,153,3,22,11,
-        0,151,153,5,11,0,0,152,149,1,0,0,0,152,151,1,0,0,0,153,23,1,0,0,
-        0,154,155,3,26,13,0,155,25,1,0,0,0,156,157,5,11,0,0,157,158,5,8,
-        0,0,158,162,3,26,13,0,159,160,5,11,0,0,160,162,5,8,0,0,161,156,1,
-        0,0,0,161,159,1,0,0,0,162,27,1,0,0,0,163,164,3,30,15,0,164,29,1,
-        0,0,0,165,166,6,15,-1,0,166,167,5,11,0,0,167,168,5,10,0,0,168,174,
-        1,0,0,0,169,170,10,2,0,0,170,171,5,11,0,0,171,173,5,10,0,0,172,169,
-        1,0,0,0,173,176,1,0,0,0,174,172,1,0,0,0,174,175,1,0,0,0,175,31,1,
-        0,0,0,176,174,1,0,0,0,14,40,47,53,77,105,112,122,124,132,141,147,
-        152,161,174
+        2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
+        7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,1,0,1,0,1,0,1,1,1,1,
+        1,1,1,1,1,1,3,1,59,8,1,1,2,1,2,1,2,3,2,64,8,2,1,3,1,3,1,3,1,3,1,
+        3,3,3,71,8,3,1,4,1,4,1,4,1,4,3,4,77,8,4,1,5,1,5,1,5,1,5,1,5,1,5,
+        1,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,1,6,
+        3,6,101,8,6,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,
+        1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,1,7,3,7,129,8,7,
+        1,8,1,8,1,8,1,8,1,8,3,8,136,8,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,1,8,
+        5,8,146,8,8,10,8,12,8,149,9,8,1,9,1,9,1,9,1,9,1,9,3,9,156,8,9,1,
+        10,1,10,1,10,1,10,1,10,5,10,163,8,10,10,10,12,10,166,9,10,1,11,1,
+        11,1,11,1,11,1,11,1,11,1,11,1,11,3,11,176,8,11,1,12,1,12,1,12,3,
+        12,181,8,12,1,13,1,13,1,14,1,14,1,14,1,14,1,14,3,14,190,8,14,1,15,
+        1,15,1,16,1,16,1,16,1,16,1,16,1,16,1,16,5,16,201,8,16,10,16,12,16,
+        204,9,16,1,17,1,17,1,17,1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,18,
+        1,18,1,18,1,18,1,18,3,18,221,8,18,1,19,1,19,1,19,1,19,1,19,1,19,
+        1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,1,19,
+        1,19,1,19,3,19,244,8,19,1,20,1,20,1,20,3,20,249,8,20,1,21,1,21,1,
+        21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,21,1,
+        21,1,21,3,21,268,8,21,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,22,1,
+        22,1,23,1,23,1,23,1,23,1,23,1,23,5,23,285,8,23,10,23,12,23,288,9,
+        23,1,24,1,24,1,24,1,24,1,24,0,4,16,20,32,46,25,0,2,4,6,8,10,12,14,
+        16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,0,0,300,0,50,
+        1,0,0,0,2,58,1,0,0,0,4,63,1,0,0,0,6,70,1,0,0,0,8,76,1,0,0,0,10,78,
+        1,0,0,0,12,100,1,0,0,0,14,128,1,0,0,0,16,135,1,0,0,0,18,155,1,0,
+        0,0,20,157,1,0,0,0,22,175,1,0,0,0,24,180,1,0,0,0,26,182,1,0,0,0,
+        28,189,1,0,0,0,30,191,1,0,0,0,32,193,1,0,0,0,34,205,1,0,0,0,36,220,
+        1,0,0,0,38,243,1,0,0,0,40,248,1,0,0,0,42,267,1,0,0,0,44,269,1,0,
+        0,0,46,278,1,0,0,0,48,289,1,0,0,0,50,51,3,2,1,0,51,52,5,0,0,1,52,
+        1,1,0,0,0,53,54,3,4,2,0,54,55,5,16,0,0,55,56,3,2,1,0,56,59,1,0,0,
+        0,57,59,3,4,2,0,58,53,1,0,0,0,58,57,1,0,0,0,59,3,1,0,0,0,60,64,3,
+        6,3,0,61,64,3,42,21,0,62,64,3,46,23,0,63,60,1,0,0,0,63,61,1,0,0,
+        0,63,62,1,0,0,0,64,5,1,0,0,0,65,71,3,8,4,0,66,67,3,8,4,0,67,68,5,
+        15,0,0,68,69,3,6,3,0,69,71,1,0,0,0,70,65,1,0,0,0,70,66,1,0,0,0,71,
+        7,1,0,0,0,72,77,3,12,6,0,73,77,3,10,5,0,74,77,3,14,7,0,75,77,3,18,
+        9,0,76,72,1,0,0,0,76,73,1,0,0,0,76,74,1,0,0,0,76,75,1,0,0,0,77,9,
+        1,0,0,0,78,79,5,1,0,0,79,80,5,1,0,0,80,81,5,7,0,0,81,82,3,16,8,0,
+        82,83,5,2,0,0,83,84,5,2,0,0,84,11,1,0,0,0,85,86,3,20,10,0,86,87,
+        5,15,0,0,87,88,5,1,0,0,88,89,5,7,0,0,89,90,3,18,9,0,90,91,5,2,0,
+        0,91,101,1,0,0,0,92,93,3,20,10,0,93,94,5,15,0,0,94,95,5,1,0,0,95,
+        96,5,7,0,0,96,97,3,18,9,0,97,98,5,8,0,0,98,99,5,2,0,0,99,101,1,0,
+        0,0,100,85,1,0,0,0,100,92,1,0,0,0,101,13,1,0,0,0,102,103,3,20,10,
+        0,103,104,5,1,0,0,104,105,3,18,9,0,105,106,5,2,0,0,106,129,1,0,0,
+        0,107,108,3,20,10,0,108,109,5,1,0,0,109,110,3,18,9,0,110,111,5,8,
+        0,0,111,112,5,2,0,0,112,129,1,0,0,0,113,114,3,20,10,0,114,115,5,
+        1,0,0,115,116,5,9,0,0,116,117,5,9,0,0,117,118,5,9,0,0,118,119,5,
+        2,0,0,119,129,1,0,0,0,120,121,3,20,10,0,121,122,5,1,0,0,122,123,
+        5,9,0,0,123,124,5,9,0,0,124,125,5,9,0,0,125,126,5,8,0,0,126,127,
+        5,2,0,0,127,129,1,0,0,0,128,102,1,0,0,0,128,107,1,0,0,0,128,113,
+        1,0,0,0,128,120,1,0,0,0,129,15,1,0,0,0,130,131,6,8,-1,0,131,132,
+        3,20,10,0,132,133,5,17,0,0,133,136,1,0,0,0,134,136,3,20,10,0,135,
+        130,1,0,0,0,135,134,1,0,0,0,136,147,1,0,0,0,137,138,10,4,0,0,138,
+        139,5,15,0,0,139,140,3,20,10,0,140,141,5,17,0,0,141,146,1,0,0,0,
+        142,143,10,3,0,0,143,144,5,15,0,0,144,146,3,20,10,0,145,137,1,0,
+        0,0,145,142,1,0,0,0,146,149,1,0,0,0,147,145,1,0,0,0,147,148,1,0,
+        0,0,148,17,1,0,0,0,149,147,1,0,0,0,150,151,3,20,10,0,151,152,5,15,
+        0,0,152,153,3,18,9,0,153,156,1,0,0,0,154,156,3,20,10,0,155,150,1,
+        0,0,0,155,154,1,0,0,0,156,19,1,0,0,0,157,158,6,10,-1,0,158,159,3,
+        22,11,0,159,164,1,0,0,0,160,161,10,2,0,0,161,163,3,22,11,0,162,160,
+        1,0,0,0,163,166,1,0,0,0,164,162,1,0,0,0,164,165,1,0,0,0,165,21,1,
+        0,0,0,166,164,1,0,0,0,167,176,3,24,12,0,168,176,3,26,13,0,169,176,
+        3,30,15,0,170,176,3,34,17,0,171,176,3,36,18,0,172,176,3,38,19,0,
+        173,176,3,40,20,0,174,176,3,48,24,0,175,167,1,0,0,0,175,168,1,0,
+        0,0,175,169,1,0,0,0,175,170,1,0,0,0,175,171,1,0,0,0,175,172,1,0,
+        0,0,175,173,1,0,0,0,175,174,1,0,0,0,176,23,1,0,0,0,177,178,5,14,
+        0,0,178,181,3,24,12,0,179,181,5,14,0,0,180,177,1,0,0,0,180,179,1,
+        0,0,0,181,25,1,0,0,0,182,183,3,28,14,0,183,27,1,0,0,0,184,185,5,
+        14,0,0,185,186,5,11,0,0,186,190,3,28,14,0,187,188,5,14,0,0,188,190,
+        5,11,0,0,189,184,1,0,0,0,189,187,1,0,0,0,190,29,1,0,0,0,191,192,
+        3,32,16,0,192,31,1,0,0,0,193,194,6,16,-1,0,194,195,5,14,0,0,195,
+        196,5,13,0,0,196,202,1,0,0,0,197,198,10,2,0,0,198,199,5,14,0,0,199,
+        201,5,13,0,0,200,197,1,0,0,0,201,204,1,0,0,0,202,200,1,0,0,0,202,
+        203,1,0,0,0,203,33,1,0,0,0,204,202,1,0,0,0,205,206,5,3,0,0,206,207,
+        5,3,0,0,207,208,3,6,3,0,208,209,5,4,0,0,209,210,5,4,0,0,210,35,1,
+        0,0,0,211,212,5,3,0,0,212,213,3,6,3,0,213,214,5,4,0,0,214,221,1,
+        0,0,0,215,216,5,3,0,0,216,217,3,6,3,0,217,218,5,8,0,0,218,219,5,
+        4,0,0,219,221,1,0,0,0,220,211,1,0,0,0,220,215,1,0,0,0,221,37,1,0,
+        0,0,222,223,5,3,0,0,223,224,5,9,0,0,224,225,5,9,0,0,225,226,5,9,
+        0,0,226,244,5,4,0,0,227,228,5,3,0,0,228,229,5,15,0,0,229,230,5,9,
+        0,0,230,231,5,15,0,0,231,232,5,9,0,0,232,233,5,15,0,0,233,234,5,
+        9,0,0,234,235,5,15,0,0,235,244,5,4,0,0,236,237,5,3,0,0,237,238,5,
+        9,0,0,238,239,5,15,0,0,239,240,5,9,0,0,240,241,5,15,0,0,241,242,
+        5,9,0,0,242,244,5,4,0,0,243,222,1,0,0,0,243,227,1,0,0,0,243,236,
+        1,0,0,0,244,39,1,0,0,0,245,246,5,10,0,0,246,249,3,40,20,0,247,249,
+        5,10,0,0,248,245,1,0,0,0,248,247,1,0,0,0,249,41,1,0,0,0,250,251,
+        5,9,0,0,251,252,5,9,0,0,252,253,5,9,0,0,253,254,5,9,0,0,254,255,
+        5,9,0,0,255,268,5,9,0,0,256,257,5,9,0,0,257,258,5,15,0,0,258,259,
+        5,9,0,0,259,260,5,15,0,0,260,261,5,9,0,0,261,262,5,15,0,0,262,263,
+        5,9,0,0,263,264,5,15,0,0,264,265,5,9,0,0,265,266,5,15,0,0,266,268,
+        5,9,0,0,267,250,1,0,0,0,267,256,1,0,0,0,268,43,1,0,0,0,269,270,5,
+        3,0,0,270,271,5,9,0,0,271,272,5,9,0,0,272,273,5,9,0,0,273,274,5,
+        9,0,0,274,275,5,9,0,0,275,276,5,9,0,0,276,277,5,4,0,0,277,45,1,0,
+        0,0,278,279,6,23,-1,0,279,280,3,44,22,0,280,286,1,0,0,0,281,282,
+        10,2,0,0,282,283,5,16,0,0,283,285,3,44,22,0,284,281,1,0,0,0,285,
+        288,1,0,0,0,286,284,1,0,0,0,286,287,1,0,0,0,287,47,1,0,0,0,288,286,
+        1,0,0,0,289,290,5,5,0,0,290,291,3,20,10,0,291,292,5,6,0,0,292,49,
+        1,0,0,0,20,58,63,70,76,100,128,135,145,147,155,164,175,180,189,202,
+        220,243,248,267,286
     ]
 
 class EDRParser ( Parser ):
@@ -80,49 +121,66 @@ class EDRParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'('", "')'", "'['", "']'", "':'", "'?'", 
-                     "'-'", "'&#818;'", "'\\u0302'", "'&#803;'" ]
+    literalNames = [ "<INVALID>", "'('", "')'", "'['", "']'", "'{'", "'}'", 
+                     "':'", "'?'", "'-'", "'+'", "'&#818;'", "'\\u0302'", 
+                     "'&#803;'" ]
 
     symbolicNames = [ "<INVALID>", "L_PAREN", "R_PAREN", "L_BRACKET", "R_BRACKET", 
-                      "COLON", "QUESTION", "DASH", "UNDERLINE", "CIRUMFLEX", 
-                      "DOT", "LETTER", "SPACE", "NEWLINE", "PUNCT" ]
+                      "L_CURLY", "R_CURLY", "COLON", "QUESTION", "DASH", 
+                      "PLUS", "UNDERLINE", "CIRUMFLEX", "DOT", "LETTER", 
+                      "SPACE", "NEWLINE", "PUNCT" ]
 
     RULE_root = 0
     RULE_inscription = 1
-    RULE_line = 2
-    RULE_term = 3
-    RULE_figural = 4
-    RULE_misspell = 5
-    RULE_abbrev = 6
-    RULE_desc = 7
-    RULE_string = 8
-    RULE_word = 9
-    RULE_chunk = 10
-    RULE_normal_chunk = 11
-    RULE_under_chunk = 12
-    RULE_under_helper = 13
-    RULE_dot_chunk = 14
-    RULE_dot_helper = 15
+    RULE_row = 2
+    RULE_line = 3
+    RULE_term = 4
+    RULE_figural = 5
+    RULE_misspell = 6
+    RULE_abbrev = 7
+    RULE_desc = 8
+    RULE_string = 9
+    RULE_word = 10
+    RULE_chunk = 11
+    RULE_normal_chunk = 12
+    RULE_under_chunk = 13
+    RULE_under_helper = 14
+    RULE_dot_chunk = 15
+    RULE_dot_helper = 16
+    RULE_erased = 17
+    RULE_lost_chunk = 18
+    RULE_gap_unknown = 19
+    RULE_illegible = 20
+    RULE_lost_lines_unknown = 21
+    RULE_lost_line = 22
+    RULE_lost_lines = 23
+    RULE_surplus = 24
 
-    ruleNames =  [ "root", "inscription", "line", "term", "figural", "misspell", 
-                   "abbrev", "desc", "string", "word", "chunk", "normal_chunk", 
-                   "under_chunk", "under_helper", "dot_chunk", "dot_helper" ]
+    ruleNames =  [ "root", "inscription", "row", "line", "term", "figural", 
+                   "misspell", "abbrev", "desc", "string", "word", "chunk", 
+                   "normal_chunk", "under_chunk", "under_helper", "dot_chunk", 
+                   "dot_helper", "erased", "lost_chunk", "gap_unknown", 
+                   "illegible", "lost_lines_unknown", "lost_line", "lost_lines", 
+                   "surplus" ]
 
     EOF = Token.EOF
     L_PAREN=1
     R_PAREN=2
     L_BRACKET=3
     R_BRACKET=4
-    COLON=5
-    QUESTION=6
-    DASH=7
-    UNDERLINE=8
-    CIRUMFLEX=9
-    DOT=10
-    LETTER=11
-    SPACE=12
-    NEWLINE=13
-    PUNCT=14
+    L_CURLY=5
+    R_CURLY=6
+    COLON=7
+    QUESTION=8
+    DASH=9
+    PLUS=10
+    UNDERLINE=11
+    CIRUMFLEX=12
+    DOT=13
+    LETTER=14
+    SPACE=15
+    NEWLINE=16
+    PUNCT=17
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -165,9 +223,9 @@ class EDRParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_root)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 32
+            self.state = 50
             self.inscription()
-            self.state = 33
+            self.state = 51
             self.match(EDRParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -185,26 +243,53 @@ class EDRParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def line(self):
-            return self.getTypedRuleContext(EDRParser.LineContext,0)
-
-
-        def NEWLINE(self):
-            return self.getToken(EDRParser.NEWLINE, 0)
-
-        def inscription(self):
-            return self.getTypedRuleContext(EDRParser.InscriptionContext,0)
-
 
         def getRuleIndex(self):
             return EDRParser.RULE_inscription
 
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class Inscription1Context(InscriptionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a EDRParser.InscriptionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def row(self):
+            return self.getTypedRuleContext(EDRParser.RowContext,0)
+
+        def NEWLINE(self):
+            return self.getToken(EDRParser.NEWLINE, 0)
+        def inscription(self):
+            return self.getTypedRuleContext(EDRParser.InscriptionContext,0)
+
+
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitInscription" ):
-                return visitor.visitInscription(self)
+            if hasattr( visitor, "visitInscription1" ):
+                return visitor.visitInscription1(self)
             else:
                 return visitor.visitChildren(self)
 
+
+    class Inscription2Context(InscriptionContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a EDRParser.InscriptionContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def row(self):
+            return self.getTypedRuleContext(EDRParser.RowContext,0)
+
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInscription2" ):
+                return visitor.visitInscription2(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -213,23 +298,92 @@ class EDRParser ( Parser ):
         localctx = EDRParser.InscriptionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_inscription)
         try:
-            self.state = 40
+            self.state = 58
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
             if la_ == 1:
+                localctx = EDRParser.Inscription1Context(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 35
-                self.line()
-                self.state = 36
+                self.state = 53
+                self.row()
+                self.state = 54
                 self.match(EDRParser.NEWLINE)
-                self.state = 37
+                self.state = 55
                 self.inscription()
                 pass
 
             elif la_ == 2:
+                localctx = EDRParser.Inscription2Context(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 39
+                self.state = 57
+                self.row()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class RowContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def line(self):
+            return self.getTypedRuleContext(EDRParser.LineContext,0)
+
+
+        def lost_lines_unknown(self):
+            return self.getTypedRuleContext(EDRParser.Lost_lines_unknownContext,0)
+
+
+        def lost_lines(self):
+            return self.getTypedRuleContext(EDRParser.Lost_linesContext,0)
+
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_row
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRow" ):
+                return visitor.visitRow(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def row(self):
+
+        localctx = EDRParser.RowContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 4, self.RULE_row)
+        try:
+            self.state = 63
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 60
                 self.line()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 61
+                self.lost_lines_unknown()
+                pass
+
+            elif la_ == 3:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 62
+                self.lost_lines(0)
                 pass
 
 
@@ -275,24 +429,24 @@ class EDRParser ( Parser ):
     def line(self):
 
         localctx = EDRParser.LineContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 4, self.RULE_line)
+        self.enterRule(localctx, 6, self.RULE_line)
         try:
-            self.state = 47
+            self.state = 70
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 42
+                self.state = 65
                 self.term()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 43
+                self.state = 66
                 self.term()
-                self.state = 44
+                self.state = 67
                 self.match(EDRParser.SPACE)
-                self.state = 45
+                self.state = 68
                 self.line()
                 pass
 
@@ -344,32 +498,32 @@ class EDRParser ( Parser ):
     def term(self):
 
         localctx = EDRParser.TermContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_term)
+        self.enterRule(localctx, 8, self.RULE_term)
         try:
-            self.state = 53
+            self.state = 76
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 49
+                self.state = 72
                 self.misspell()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 50
+                self.state = 73
                 self.figural()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 51
+                self.state = 74
                 self.abbrev()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 52
+                self.state = 75
                 self.string()
                 pass
 
@@ -424,20 +578,20 @@ class EDRParser ( Parser ):
     def figural(self):
 
         localctx = EDRParser.FiguralContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_figural)
+        self.enterRule(localctx, 10, self.RULE_figural)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 55
+            self.state = 78
             self.match(EDRParser.L_PAREN)
-            self.state = 56
+            self.state = 79
             self.match(EDRParser.L_PAREN)
-            self.state = 57
+            self.state = 80
             self.match(EDRParser.COLON)
-            self.state = 58
+            self.state = 81
             self.desc(0)
-            self.state = 59
+            self.state = 82
             self.match(EDRParser.R_PAREN)
-            self.state = 60
+            self.state = 83
             self.match(EDRParser.R_PAREN)
         except RecognitionException as re:
             localctx.exception = re
@@ -493,42 +647,42 @@ class EDRParser ( Parser ):
     def misspell(self):
 
         localctx = EDRParser.MisspellContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_misspell)
+        self.enterRule(localctx, 12, self.RULE_misspell)
         try:
-            self.state = 77
+            self.state = 100
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 62
+                self.state = 85
                 self.word(0)
-                self.state = 63
+                self.state = 86
                 self.match(EDRParser.SPACE)
-                self.state = 64
+                self.state = 87
                 self.match(EDRParser.L_PAREN)
-                self.state = 65
+                self.state = 88
                 self.match(EDRParser.COLON)
-                self.state = 66
+                self.state = 89
                 self.string()
-                self.state = 67
+                self.state = 90
                 self.match(EDRParser.R_PAREN)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 69
+                self.state = 92
                 self.word(0)
-                self.state = 70
+                self.state = 93
                 self.match(EDRParser.SPACE)
-                self.state = 71
+                self.state = 94
                 self.match(EDRParser.L_PAREN)
-                self.state = 72
+                self.state = 95
                 self.match(EDRParser.COLON)
-                self.state = 73
+                self.state = 96
                 self.string()
-                self.state = 74
+                self.state = 97
                 self.match(EDRParser.QUESTION)
-                self.state = 75
+                self.state = 98
                 self.match(EDRParser.R_PAREN)
                 pass
 
@@ -667,72 +821,72 @@ class EDRParser ( Parser ):
     def abbrev(self):
 
         localctx = EDRParser.AbbrevContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_abbrev)
+        self.enterRule(localctx, 14, self.RULE_abbrev)
         try:
-            self.state = 105
+            self.state = 128
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 localctx = EDRParser.Normal_abbrContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 79
+                self.state = 102
                 self.word(0)
-                self.state = 80
+                self.state = 103
                 self.match(EDRParser.L_PAREN)
-                self.state = 81
+                self.state = 104
                 self.string()
-                self.state = 82
+                self.state = 105
                 self.match(EDRParser.R_PAREN)
                 pass
 
             elif la_ == 2:
                 localctx = EDRParser.Uncertain_abbrContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 84
+                self.state = 107
                 self.word(0)
-                self.state = 85
+                self.state = 108
                 self.match(EDRParser.L_PAREN)
-                self.state = 86
+                self.state = 109
                 self.string()
-                self.state = 87
+                self.state = 110
                 self.match(EDRParser.QUESTION)
-                self.state = 88
+                self.state = 111
                 self.match(EDRParser.R_PAREN)
                 pass
 
             elif la_ == 3:
                 localctx = EDRParser.Unknown_abbr1Context(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 90
+                self.state = 113
                 self.word(0)
-                self.state = 91
+                self.state = 114
                 self.match(EDRParser.L_PAREN)
-                self.state = 92
+                self.state = 115
                 self.match(EDRParser.DASH)
-                self.state = 93
+                self.state = 116
                 self.match(EDRParser.DASH)
-                self.state = 94
+                self.state = 117
                 self.match(EDRParser.DASH)
-                self.state = 95
+                self.state = 118
                 self.match(EDRParser.R_PAREN)
                 pass
 
             elif la_ == 4:
                 localctx = EDRParser.Unknown_abbr2Context(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 97
+                self.state = 120
                 self.word(0)
-                self.state = 98
+                self.state = 121
                 self.match(EDRParser.L_PAREN)
-                self.state = 99
+                self.state = 122
                 self.match(EDRParser.DASH)
-                self.state = 100
+                self.state = 123
                 self.match(EDRParser.DASH)
-                self.state = 101
+                self.state = 124
                 self.match(EDRParser.DASH)
-                self.state = 102
+                self.state = 125
                 self.match(EDRParser.QUESTION)
-                self.state = 103
+                self.state = 126
                 self.match(EDRParser.R_PAREN)
                 pass
 
@@ -783,70 +937,70 @@ class EDRParser ( Parser ):
         _parentState = self.state
         localctx = EDRParser.DescContext(self, self._ctx, _parentState)
         _prevctx = localctx
-        _startState = 14
-        self.enterRecursionRule(localctx, 14, self.RULE_desc, _p)
+        _startState = 16
+        self.enterRecursionRule(localctx, 16, self.RULE_desc, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 112
+            self.state = 135
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
-                self.state = 108
+                self.state = 131
                 self.word(0)
-                self.state = 109
+                self.state = 132
                 self.match(EDRParser.PUNCT)
                 pass
 
             elif la_ == 2:
-                self.state = 111
+                self.state = 134
                 self.word(0)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 124
+            self.state = 147
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 122
+                    self.state = 145
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
                     if la_ == 1:
                         localctx = EDRParser.DescContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_desc)
-                        self.state = 114
+                        self.state = 137
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 115
+                        self.state = 138
                         self.match(EDRParser.SPACE)
-                        self.state = 116
+                        self.state = 139
                         self.word(0)
-                        self.state = 117
+                        self.state = 140
                         self.match(EDRParser.PUNCT)
                         pass
 
                     elif la_ == 2:
                         localctx = EDRParser.DescContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_desc)
-                        self.state = 119
+                        self.state = 142
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 120
+                        self.state = 143
                         self.match(EDRParser.SPACE)
-                        self.state = 121
+                        self.state = 144
                         self.word(0)
                         pass
 
              
-                self.state = 126
+                self.state = 149
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -890,24 +1044,24 @@ class EDRParser ( Parser ):
     def string(self):
 
         localctx = EDRParser.StringContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_string)
+        self.enterRule(localctx, 18, self.RULE_string)
         try:
-            self.state = 132
+            self.state = 155
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 127
+                self.state = 150
                 self.word(0)
-                self.state = 128
+                self.state = 151
                 self.match(EDRParser.SPACE)
-                self.state = 129
+                self.state = 152
                 self.string()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 131
+                self.state = 154
                 self.word(0)
                 pass
 
@@ -952,16 +1106,16 @@ class EDRParser ( Parser ):
         _parentState = self.state
         localctx = EDRParser.WordContext(self, self._ctx, _parentState)
         _prevctx = localctx
-        _startState = 18
-        self.enterRecursionRule(localctx, 18, self.RULE_word, _p)
+        _startState = 20
+        self.enterRecursionRule(localctx, 20, self.RULE_word, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 135
+            self.state = 158
             self.chunk()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 141
+            self.state = 164
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -969,15 +1123,15 @@ class EDRParser ( Parser ):
                     _prevctx = localctx
                     localctx = EDRParser.WordContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_word)
-                    self.state = 137
+                    self.state = 160
                     if not self.precpred(self._ctx, 2):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                    self.state = 138
+                    self.state = 161
                     self.chunk() 
-                self.state = 143
+                self.state = 166
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1007,6 +1161,26 @@ class EDRParser ( Parser ):
             return self.getTypedRuleContext(EDRParser.Dot_chunkContext,0)
 
 
+        def erased(self):
+            return self.getTypedRuleContext(EDRParser.ErasedContext,0)
+
+
+        def lost_chunk(self):
+            return self.getTypedRuleContext(EDRParser.Lost_chunkContext,0)
+
+
+        def gap_unknown(self):
+            return self.getTypedRuleContext(EDRParser.Gap_unknownContext,0)
+
+
+        def illegible(self):
+            return self.getTypedRuleContext(EDRParser.IllegibleContext,0)
+
+
+        def surplus(self):
+            return self.getTypedRuleContext(EDRParser.SurplusContext,0)
+
+
         def getRuleIndex(self):
             return EDRParser.RULE_chunk
 
@@ -1022,27 +1196,57 @@ class EDRParser ( Parser ):
     def chunk(self):
 
         localctx = EDRParser.ChunkContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_chunk)
+        self.enterRule(localctx, 22, self.RULE_chunk)
         try:
-            self.state = 147
+            self.state = 175
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 144
+                self.state = 167
                 self.normal_chunk()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 145
+                self.state = 168
                 self.under_chunk()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 146
+                self.state = 169
                 self.dot_chunk()
+                pass
+
+            elif la_ == 4:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 170
+                self.erased()
+                pass
+
+            elif la_ == 5:
+                self.enterOuterAlt(localctx, 5)
+                self.state = 171
+                self.lost_chunk()
+                pass
+
+            elif la_ == 6:
+                self.enterOuterAlt(localctx, 6)
+                self.state = 172
+                self.gap_unknown()
+                pass
+
+            elif la_ == 7:
+                self.enterOuterAlt(localctx, 7)
+                self.state = 173
+                self.illegible()
+                pass
+
+            elif la_ == 8:
+                self.enterOuterAlt(localctx, 8)
+                self.state = 174
+                self.surplus()
                 pass
 
 
@@ -1084,22 +1288,22 @@ class EDRParser ( Parser ):
     def normal_chunk(self):
 
         localctx = EDRParser.Normal_chunkContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_normal_chunk)
+        self.enterRule(localctx, 24, self.RULE_normal_chunk)
         try:
-            self.state = 152
+            self.state = 180
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 149
+                self.state = 177
                 self.match(EDRParser.LETTER)
-                self.state = 150
+                self.state = 178
                 self.normal_chunk()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 151
+                self.state = 179
                 self.match(EDRParser.LETTER)
                 pass
 
@@ -1139,10 +1343,10 @@ class EDRParser ( Parser ):
     def under_chunk(self):
 
         localctx = EDRParser.Under_chunkContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_under_chunk)
+        self.enterRule(localctx, 26, self.RULE_under_chunk)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 154
+            self.state = 182
             self.under_helper()
         except RecognitionException as re:
             localctx.exception = re
@@ -1185,26 +1389,26 @@ class EDRParser ( Parser ):
     def under_helper(self):
 
         localctx = EDRParser.Under_helperContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_under_helper)
+        self.enterRule(localctx, 28, self.RULE_under_helper)
         try:
-            self.state = 161
+            self.state = 189
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 156
+                self.state = 184
                 self.match(EDRParser.LETTER)
-                self.state = 157
+                self.state = 185
                 self.match(EDRParser.UNDERLINE)
-                self.state = 158
+                self.state = 186
                 self.under_helper()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 159
+                self.state = 187
                 self.match(EDRParser.LETTER)
-                self.state = 160
+                self.state = 188
                 self.match(EDRParser.UNDERLINE)
                 pass
 
@@ -1244,10 +1448,10 @@ class EDRParser ( Parser ):
     def dot_chunk(self):
 
         localctx = EDRParser.Dot_chunkContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_dot_chunk)
+        self.enterRule(localctx, 30, self.RULE_dot_chunk)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 163
+            self.state = 191
             self.dot_helper(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -1291,18 +1495,18 @@ class EDRParser ( Parser ):
         _parentState = self.state
         localctx = EDRParser.Dot_helperContext(self, self._ctx, _parentState)
         _prevctx = localctx
-        _startState = 30
-        self.enterRecursionRule(localctx, 30, self.RULE_dot_helper, _p)
+        _startState = 32
+        self.enterRecursionRule(localctx, 32, self.RULE_dot_helper, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 166
+            self.state = 194
             self.match(EDRParser.LETTER)
-            self.state = 167
+            self.state = 195
             self.match(EDRParser.DOT)
             self._ctx.stop = self._input.LT(-1)
-            self.state = 174
+            self.state = 202
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -1310,17 +1514,17 @@ class EDRParser ( Parser ):
                     _prevctx = localctx
                     localctx = EDRParser.Dot_helperContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_dot_helper)
-                    self.state = 169
+                    self.state = 197
                     if not self.precpred(self._ctx, 2):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                    self.state = 170
+                    self.state = 198
                     self.match(EDRParser.LETTER)
-                    self.state = 171
+                    self.state = 199
                     self.match(EDRParser.DOT) 
-                self.state = 176
+                self.state = 204
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,13,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1331,13 +1535,588 @@ class EDRParser ( Parser ):
         return localctx
 
 
+    class ErasedContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def L_BRACKET(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.L_BRACKET)
+            else:
+                return self.getToken(EDRParser.L_BRACKET, i)
+
+        def line(self):
+            return self.getTypedRuleContext(EDRParser.LineContext,0)
+
+
+        def R_BRACKET(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.R_BRACKET)
+            else:
+                return self.getToken(EDRParser.R_BRACKET, i)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_erased
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitErased" ):
+                return visitor.visitErased(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def erased(self):
+
+        localctx = EDRParser.ErasedContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 34, self.RULE_erased)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 205
+            self.match(EDRParser.L_BRACKET)
+            self.state = 206
+            self.match(EDRParser.L_BRACKET)
+            self.state = 207
+            self.line()
+            self.state = 208
+            self.match(EDRParser.R_BRACKET)
+            self.state = 209
+            self.match(EDRParser.R_BRACKET)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Lost_chunkContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def L_BRACKET(self):
+            return self.getToken(EDRParser.L_BRACKET, 0)
+
+        def line(self):
+            return self.getTypedRuleContext(EDRParser.LineContext,0)
+
+
+        def R_BRACKET(self):
+            return self.getToken(EDRParser.R_BRACKET, 0)
+
+        def QUESTION(self):
+            return self.getToken(EDRParser.QUESTION, 0)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_lost_chunk
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLost_chunk" ):
+                return visitor.visitLost_chunk(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def lost_chunk(self):
+
+        localctx = EDRParser.Lost_chunkContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 36, self.RULE_lost_chunk)
+        try:
+            self.state = 220
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 211
+                self.match(EDRParser.L_BRACKET)
+                self.state = 212
+                self.line()
+                self.state = 213
+                self.match(EDRParser.R_BRACKET)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 215
+                self.match(EDRParser.L_BRACKET)
+                self.state = 216
+                self.line()
+                self.state = 217
+                self.match(EDRParser.QUESTION)
+                self.state = 218
+                self.match(EDRParser.R_BRACKET)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Gap_unknownContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def L_BRACKET(self):
+            return self.getToken(EDRParser.L_BRACKET, 0)
+
+        def DASH(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.DASH)
+            else:
+                return self.getToken(EDRParser.DASH, i)
+
+        def R_BRACKET(self):
+            return self.getToken(EDRParser.R_BRACKET, 0)
+
+        def SPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.SPACE)
+            else:
+                return self.getToken(EDRParser.SPACE, i)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_gap_unknown
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGap_unknown" ):
+                return visitor.visitGap_unknown(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def gap_unknown(self):
+
+        localctx = EDRParser.Gap_unknownContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 38, self.RULE_gap_unknown)
+        try:
+            self.state = 243
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 222
+                self.match(EDRParser.L_BRACKET)
+                self.state = 223
+                self.match(EDRParser.DASH)
+                self.state = 224
+                self.match(EDRParser.DASH)
+                self.state = 225
+                self.match(EDRParser.DASH)
+                self.state = 226
+                self.match(EDRParser.R_BRACKET)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 227
+                self.match(EDRParser.L_BRACKET)
+                self.state = 228
+                self.match(EDRParser.SPACE)
+                self.state = 229
+                self.match(EDRParser.DASH)
+                self.state = 230
+                self.match(EDRParser.SPACE)
+                self.state = 231
+                self.match(EDRParser.DASH)
+                self.state = 232
+                self.match(EDRParser.SPACE)
+                self.state = 233
+                self.match(EDRParser.DASH)
+                self.state = 234
+                self.match(EDRParser.SPACE)
+                self.state = 235
+                self.match(EDRParser.R_BRACKET)
+                pass
+
+            elif la_ == 3:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 236
+                self.match(EDRParser.L_BRACKET)
+                self.state = 237
+                self.match(EDRParser.DASH)
+                self.state = 238
+                self.match(EDRParser.SPACE)
+                self.state = 239
+                self.match(EDRParser.DASH)
+                self.state = 240
+                self.match(EDRParser.SPACE)
+                self.state = 241
+                self.match(EDRParser.DASH)
+                self.state = 242
+                self.match(EDRParser.R_BRACKET)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class IllegibleContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def PLUS(self):
+            return self.getToken(EDRParser.PLUS, 0)
+
+        def illegible(self):
+            return self.getTypedRuleContext(EDRParser.IllegibleContext,0)
+
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_illegible
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIllegible" ):
+                return visitor.visitIllegible(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def illegible(self):
+
+        localctx = EDRParser.IllegibleContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 40, self.RULE_illegible)
+        try:
+            self.state = 248
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 245
+                self.match(EDRParser.PLUS)
+                self.state = 246
+                self.illegible()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 247
+                self.match(EDRParser.PLUS)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Lost_lines_unknownContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def DASH(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.DASH)
+            else:
+                return self.getToken(EDRParser.DASH, i)
+
+        def SPACE(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.SPACE)
+            else:
+                return self.getToken(EDRParser.SPACE, i)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_lost_lines_unknown
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLost_lines_unknown" ):
+                return visitor.visitLost_lines_unknown(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def lost_lines_unknown(self):
+
+        localctx = EDRParser.Lost_lines_unknownContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 42, self.RULE_lost_lines_unknown)
+        try:
+            self.state = 267
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 250
+                self.match(EDRParser.DASH)
+                self.state = 251
+                self.match(EDRParser.DASH)
+                self.state = 252
+                self.match(EDRParser.DASH)
+                self.state = 253
+                self.match(EDRParser.DASH)
+                self.state = 254
+                self.match(EDRParser.DASH)
+                self.state = 255
+                self.match(EDRParser.DASH)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 256
+                self.match(EDRParser.DASH)
+                self.state = 257
+                self.match(EDRParser.SPACE)
+                self.state = 258
+                self.match(EDRParser.DASH)
+                self.state = 259
+                self.match(EDRParser.SPACE)
+                self.state = 260
+                self.match(EDRParser.DASH)
+                self.state = 261
+                self.match(EDRParser.SPACE)
+                self.state = 262
+                self.match(EDRParser.DASH)
+                self.state = 263
+                self.match(EDRParser.SPACE)
+                self.state = 264
+                self.match(EDRParser.DASH)
+                self.state = 265
+                self.match(EDRParser.SPACE)
+                self.state = 266
+                self.match(EDRParser.DASH)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Lost_lineContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def L_BRACKET(self):
+            return self.getToken(EDRParser.L_BRACKET, 0)
+
+        def DASH(self, i:int=None):
+            if i is None:
+                return self.getTokens(EDRParser.DASH)
+            else:
+                return self.getToken(EDRParser.DASH, i)
+
+        def R_BRACKET(self):
+            return self.getToken(EDRParser.R_BRACKET, 0)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_lost_line
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLost_line" ):
+                return visitor.visitLost_line(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def lost_line(self):
+
+        localctx = EDRParser.Lost_lineContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 44, self.RULE_lost_line)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 269
+            self.match(EDRParser.L_BRACKET)
+            self.state = 270
+            self.match(EDRParser.DASH)
+            self.state = 271
+            self.match(EDRParser.DASH)
+            self.state = 272
+            self.match(EDRParser.DASH)
+            self.state = 273
+            self.match(EDRParser.DASH)
+            self.state = 274
+            self.match(EDRParser.DASH)
+            self.state = 275
+            self.match(EDRParser.DASH)
+            self.state = 276
+            self.match(EDRParser.R_BRACKET)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class Lost_linesContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def lost_line(self):
+            return self.getTypedRuleContext(EDRParser.Lost_lineContext,0)
+
+
+        def lost_lines(self):
+            return self.getTypedRuleContext(EDRParser.Lost_linesContext,0)
+
+
+        def NEWLINE(self):
+            return self.getToken(EDRParser.NEWLINE, 0)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_lost_lines
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLost_lines" ):
+                return visitor.visitLost_lines(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def lost_lines(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = EDRParser.Lost_linesContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 46
+        self.enterRecursionRule(localctx, 46, self.RULE_lost_lines, _p)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 279
+            self.lost_line()
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 286
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    localctx = EDRParser.Lost_linesContext(self, _parentctx, _parentState)
+                    self.pushNewRecursionContext(localctx, _startState, self.RULE_lost_lines)
+                    self.state = 281
+                    if not self.precpred(self._ctx, 2):
+                        from antlr4.error.Errors import FailedPredicateException
+                        raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                    self.state = 282
+                    self.match(EDRParser.NEWLINE)
+                    self.state = 283
+                    self.lost_line() 
+                self.state = 288
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.unrollRecursionContexts(_parentctx)
+        return localctx
+
+
+    class SurplusContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def L_CURLY(self):
+            return self.getToken(EDRParser.L_CURLY, 0)
+
+        def word(self):
+            return self.getTypedRuleContext(EDRParser.WordContext,0)
+
+
+        def R_CURLY(self):
+            return self.getToken(EDRParser.R_CURLY, 0)
+
+        def getRuleIndex(self):
+            return EDRParser.RULE_surplus
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSurplus" ):
+                return visitor.visitSurplus(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def surplus(self):
+
+        localctx = EDRParser.SurplusContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_surplus)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 289
+            self.match(EDRParser.L_CURLY)
+            self.state = 290
+            self.word(0)
+            self.state = 291
+            self.match(EDRParser.R_CURLY)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
 
     def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
         if self._predicates == None:
             self._predicates = dict()
-        self._predicates[7] = self.desc_sempred
-        self._predicates[9] = self.word_sempred
-        self._predicates[15] = self.dot_helper_sempred
+        self._predicates[8] = self.desc_sempred
+        self._predicates[10] = self.word_sempred
+        self._predicates[16] = self.dot_helper_sempred
+        self._predicates[23] = self.lost_lines_sempred
         pred = self._predicates.get(ruleIndex, None)
         if pred is None:
             raise Exception("No predicate with index:" + str(ruleIndex))
@@ -1360,6 +2139,11 @@ class EDRParser ( Parser ):
 
     def dot_helper_sempred(self, localctx:Dot_helperContext, predIndex:int):
             if predIndex == 3:
+                return self.precpred(self._ctx, 2)
+         
+
+    def lost_lines_sempred(self, localctx:Lost_linesContext, predIndex:int):
+            if predIndex == 4:
                 return self.precpred(self._ctx, 2)
          
 
