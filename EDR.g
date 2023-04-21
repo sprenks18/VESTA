@@ -5,8 +5,6 @@ root: inscription EOF;
 // line or missing line(s)
 inscription: row NEWLINE inscription #inscription1
            | row #inscription2
-        //    | lost_lines_unknown NEWLINE inscription #inscription3
-        //    | lost_lines_unknown #inscription4
            ;
 
 row: line | lost_lines_unknown | lost_lines;
@@ -15,7 +13,7 @@ line: term
     | term SPACE line
     ;
 
-term: misspell | figural | abbrev | string;
+term: misspell | figural | abbrev | string | editorial;
 
 figural: L_PAREN L_PAREN COLON desc R_PAREN R_PAREN;
 
@@ -43,7 +41,8 @@ word: word chunk | chunk;
 
 // The order of these matters (lost chunk is technically recursive [TODO - fix this])
 chunk: normal_chunk | under_chunk | dot_chunk | erased | lost_chunk
-     | gap_unknown | illegible | surplus | joined | symbol;
+     | gap_unknown | illegible | surplus | joined | symbol | lost_chars
+     | lost_chars_known | omitted;
 
 normal_chunk: LETTER normal_chunk | LETTER;
 
@@ -76,6 +75,8 @@ lost_lines_unknown: DASH DASH DASH DASH DASH DASH
                   | DASH SPACE DASH SPACE DASH SPACE DASH SPACE DASH SPACE DASH
                   ;
 
+lost_chars_known: L_BRACKET dashes R_BRACKET;
+
 lost_line: L_BRACKET DASH DASH DASH DASH DASH DASH R_BRACKET;
 
 lost_lines: lost_lines NEWLINE lost_line
@@ -91,6 +92,22 @@ joined_helper: joined_letters CIRCUMFLEX LETTER
 joined_letters: LETTER CIRCUMFLEX LETTER;
 
 symbol: L_PAREN L_PAREN word R_PAREN R_PAREN;
+
+lost_chars: L_BRACKET PLUS NUM QUESTION PLUS R_BRACKET;
+
+// Allow for 1,2,4,5, and more (3 and 6 are reserved with separate meaning)
+dashes: DASH | DASH DASH | DASH DASH DASH DASH | 
+        DASH DASH DASH DASH DASH | DASH DASH DASH DASH DASH DASH dashes;
+
+editorial: vacat | ianua | subaudible;
+
+vacat: VACAT;
+ianua: IANUA;
+subaudible: L_ANGLE COLON normal_chunk R_ANGLE
+       | L_PAREN normal_chunk R_PAREN;
+
+omitted: L_ANGLE normal_chunk R_ANGLE;
+
 
 // Tokens
 L_PAREN: '(';
@@ -116,3 +133,8 @@ LETTER : [A-Za-z]
 SPACE: [ \t]+;
 NEWLINE: [\n\r]+ | [ ]*'<BR>'[ ]* | [ ]*'<br>'[ ]*;
 PUNCT: '.' | ',';
+NUM: [0-9]+;
+L_ANGLE: '&#12296;' | '<';
+R_ANGLE: '&#12297;' | '>';
+VACAT: L_ANGLE':vacat'R_ANGLE;
+IANUA: L_ANGLE':ianua'R_ANGLE;

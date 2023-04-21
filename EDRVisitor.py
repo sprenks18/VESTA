@@ -139,6 +139,11 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by EDRParser#lost_chars_known.
+    def visitLost_chars_known(self, ctx:EDRParser.Lost_chars_knownContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by EDRParser#lost_line.
     def visitLost_line(self, ctx:EDRParser.Lost_lineContext):
         return self.visitChildren(ctx)
@@ -171,6 +176,41 @@ class EDRVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by EDRParser#symbol.
     def visitSymbol(self, ctx:EDRParser.SymbolContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_chars.
+    def visitLost_chars(self, ctx:EDRParser.Lost_charsContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#dashes.
+    def visitDashes(self, ctx:EDRParser.DashesContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#editorial.
+    def visitEditorial(self, ctx:EDRParser.EditorialContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#vacat.
+    def visitVacat(self, ctx:EDRParser.VacatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#ianua.
+    def visitIanua(self, ctx:EDRParser.IanuaContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#subaudible.
+    def visitSubaudible(self, ctx:EDRParser.SubaudibleContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#omitted.
+    def visitOmitted(self, ctx:EDRParser.OmittedContext):
         return self.visitChildren(ctx)
 
 

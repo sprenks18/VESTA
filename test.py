@@ -165,3 +165,48 @@ assert translate(content) == expected, "Joined letters failed"
 content = "((denarius))"
 expected = "<lb n=\"1\"/>\n<expan><abbr><am><g type=\"denarius\"/></am></abbr><ex>denarius</ex></expan>"
 assert translate(content) == expected, "Symbol failed"
+
+# Test lost characters
+content = "[+4?+]"
+expected = "<lb n=\"1\"/>\n<gap reason=\"lost\" quantity=\"4\" unit=\"character\" precision=\"low\"/>"
+assert translate(content) == expected, "Lost characters failed"
+
+# Test lost characters
+content = "Quartill[-]a"
+expected = "<lb n=\"1\"/>\nQuartill<gap reason=\"lost\" quantity=\"1\" unit=\"character\"/>a"
+assert translate(content) == expected, "Lost characters known failed"
+
+# Test lost characters
+content = "Quartill[-------]a"
+expected = "<lb n=\"1\"/>\nQuartill<gap reason=\"lost\" quantity=\"7\" unit=\"character\"/>a"
+assert translate(content) == expected, "Lost characters known failed"
+
+# Test empty space
+content = "MM\n<:vacat>\nM"
+expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n</space>\n<lb n=\"3\"/>\nM"
+assert translate(content) == expected, "Empty space (vacat) failed"
+
+# Test empty space html
+content = "MM\n&#12296;:vacat&#12297;\nM"
+expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n</space>\n<lb n=\"3\"/>\nM"
+assert translate(content) == expected, "Empty space (vacat html) failed"
+
+# Test space for door
+content = "IIIII &#12296;:ianua&#12297; IIIII"
+expected = "<lb n=\"1\"/>\nIIIII <space type=\"door\"/> IIIII"
+assert translate(content) == expected, "Empty space (vacat html) failed"
+
+# Test subaudible brackets
+content = "&#12296;:servus&#12297;"
+expected = "<lb n=\"1\"/>\n<supplied reason=\"subaudible\">servus</supplied>"
+assert translate(content) == expected, "Subaudible (brackets) failed"
+
+# Test subaudible parens
+content = "(servus)"
+expected = "<lb n=\"1\"/>\n<supplied reason=\"subaudible\">servus</supplied>"
+assert translate(content) == expected, "Subaudible (parens) failed"
+
+# Test omitted parens
+content = "<Aug>ustus"
+expected = "<lb n=\"1\"/>\n<supplied reason=\"omitted\">Aug</supplied>ustus"
+assert translate(content) == expected, "Omitted failed"

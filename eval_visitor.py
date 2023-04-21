@@ -27,6 +27,12 @@ LOST_LINES = "<gap reason=\"lost\" extent=\"%d\" unit=\"line\"/>"
 SURPLUS = "<surplus>%s</surplus>"
 JOINED = "<hi rend=\"ligature\">%s</hi>"
 SYMBOL = "<expan><abbr><am><g type=\"%s\"/></am></abbr><ex>%s</ex></expan>"
+LOST_CHARS = "<gap reason=\"lost\" quantity=\"%d\" unit=\"character\" precision=\"low\"/>"
+LOST_CHARS_KNOWN = "<gap reason=\"lost\" quantity=\"%d\" unit=\"character\"/>"
+VACAT = "</space>"
+IANUA = "<space type=\"door\"/>"
+SUB_AUDIBLE = "<supplied reason=\"subaudible\">%s</supplied>"
+OMITTED = "<supplied reason=\"omitted\">%s</supplied>"
 
 class EvalVisitor(EDRVisitor):
 
@@ -253,3 +259,43 @@ class EvalVisitor(EDRVisitor):
         l = list(ctx.getChildren())
         sym = self.visit(l[2])
         return SYMBOL % (sym,sym)
+    
+    # Visit a parse tree produced by EDRParser#lost_chars.
+    def visitLost_chars(self, ctx:EDRParser.Lost_charsContext):
+        l = list(ctx.getChildren())
+        char_count = int(l[2].getText())
+        return LOST_CHARS % (char_count,)
+    
+    # Visit a parse tree produced by EDRParser#lost_chars_known.
+    def visitLost_chars_known(self, ctx:EDRParser.Lost_chars_knownContext):
+        l = list(ctx.getChildren())
+        char_count = len(l[1].getText())
+        return LOST_CHARS_KNOWN % (char_count,)
+    
+    # Visit a parse tree produced by EDRParser#editorial.
+    def visitEditorial(self, ctx:EDRParser.EditorialContext):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
+
+    # Visit a parse tree produced by EDRParser#vacat.
+    def visitVacat(self, ctx:EDRParser.VacatContext):
+        return VACAT
+
+    # Visit a parse tree produced by EDRParser#ianua.
+    def visitIanua(self, ctx:EDRParser.IanuaContext):
+        return IANUA
+    
+    # Visit a parse tree produced by EDRParser#subaudible.
+    def visitSubaudible(self, ctx:EDRParser.SubaudibleContext):
+        l = list(ctx.getChildren())
+        if len(l) == 4:
+            word = self.visit(l[2])
+        else:
+            word = self.visit(l[1])
+        return SUB_AUDIBLE % (word,)
+    
+    # Visit a parse tree produced by EDRParser#omitted.
+    def visitOmitted(self, ctx:EDRParser.OmittedContext):
+        l = list(ctx.getChildren())
+        word = self.visit(l[1])
+        return OMITTED % (word,)
