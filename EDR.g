@@ -5,6 +5,7 @@ root: inscription EOF;
 // line or missing line(s)
 inscription: row NEWLINE inscription #inscription1
            | row #inscription2
+           | row NEWLINE #inscription3
            ;
 
 row: line | lost_lines_unknown | lost_lines;
@@ -107,7 +108,6 @@ subaudible: L_ANGLE COLON normal_chunk R_ANGLE
        | L_PAREN normal_chunk R_PAREN;
 
 omitted: L_ANGLE normal_chunk R_ANGLE;
-
 
 // Tokens
 L_PAREN: '(';

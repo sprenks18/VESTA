@@ -210,3 +210,9 @@ assert translate(content) == expected, "Subaudible (parens) failed"
 content = "<Aug>ustus"
 expected = "<lb n=\"1\"/>\n<supplied reason=\"omitted\">Aug</supplied>ustus"
 assert translate(content) == expected, "Omitted failed"
+
+# Test extra newline
+content = "Augustus<br>"
+expected = "<lb n=\"1\"/>\nAugustus"
+assert translate(content) == expected, "Extra newline failed"
+

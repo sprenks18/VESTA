@@ -33,6 +33,7 @@ VACAT = "</space>"
 IANUA = "<space type=\"door\"/>"
 SUB_AUDIBLE = "<supplied reason=\"subaudible\">%s</supplied>"
 OMITTED = "<supplied reason=\"omitted\">%s</supplied>"
+COLUMN = "<div type=\"textpart\" subtype=\"column\" n=\"a\">%s</div>"
 
 class EvalVisitor(EDRVisitor):
 
@@ -62,6 +63,11 @@ class EvalVisitor(EDRVisitor):
         l = list(ctx.getChildren())
         return self.visit(l[0])
     
+    # Visit a parse tree produced by EDRParser#inscription3.
+    def visitInscription3(self, ctx:EDRParser.Inscription3Context):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
+        
     # Visit a parse tree produced by EDRParser#row.
     def visitRow(self, ctx:EDRParser.RowContext):
         l = list(ctx.getChildren())
