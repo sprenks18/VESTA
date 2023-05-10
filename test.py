@@ -51,6 +51,16 @@ content  = "Anneus (:Annaeus?)"
 expected = "<lb n=\"1\"/>\n<choice><reg cert=\"low\">Annaeus</reg><orig>Anneus</orig></choice>"
 assert translate(content) == expected, "Uncertain misspelling failed"
 
+# Test misspelling (no space)
+content  = "Mamium(:Mammium) Anicetum"
+expected = "<lb n=\"1\"/>\n<choice><reg>Mammium</reg><orig>Mamium</orig></choice> Anicetum"
+assert translate(content) == expected, "Misspelling (no space) failed"
+
+# Test uncertain misspelling (no space)
+content  = "Mamium(:Mammium?) Anicetum"
+expected = "<lb n=\"1\"/>\n<choice><reg cert=\"low\">Mammium</reg><orig>Mamium</orig></choice> Anicetum"
+assert translate(content) == expected, "Uncertain misspelling (no space) failed"
+
 # Test figural
 content  = "((:cervus))"
 expected = "<lb n=\"1\"/>\n<figure><figDesc>cervus</figDesc></figure>"
@@ -151,6 +161,11 @@ content = "&#945;&#818;"
 expected = "<lb n=\"1\"/>\n<supplied reason=\"undefined\" evidence=\"previouseditor\">α</supplied>"
 assert translate(content) == expected, "Greek missing failed"
 
+# Test Greek and Latin
+content = "&#913;&#916;&#931;ABC"
+expected = "<lb n=\"1\"/>\nΑΔΣABC"
+assert translate(content) == expected, "Greek and Latin failed"
+
 # Test joined letters
 content = "M&#770;a&#770;i"
 expected = "<lb n=\"1\"/>\n<hi rend=\"ligature\">Mai</hi>"
@@ -183,12 +198,12 @@ assert translate(content) == expected, "Lost characters known failed"
 
 # Test empty space
 content = "MM\n<:vacat>\nM"
-expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n</space>\n<lb n=\"3\"/>\nM"
+expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n<space/>\n<lb n=\"3\"/>\nM"
 assert translate(content) == expected, "Empty space (vacat) failed"
 
 # Test empty space html
 content = "MM\n&#12296;:vacat&#12297;\nM"
-expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n</space>\n<lb n=\"3\"/>\nM"
+expected = "<lb n=\"1\"/>\nMM\n<lb n=\"2\"/>\n<space/>\n<lb n=\"3\"/>\nM"
 assert translate(content) == expected, "Empty space (vacat html) failed"
 
 # Test space for door
@@ -215,4 +230,14 @@ assert translate(content) == expected, "Omitted failed"
 content = "Augustus<br>"
 expected = "<lb n=\"1\"/>\nAugustus"
 assert translate(content) == expected, "Extra newline failed"
+
+# Test space before a newline
+content = "Ic (:hic) sumus \n"
+expected = "<lb n=\"1\"/>\n<choice><reg>hic</reg><orig>Ic</orig></choice> sumus"
+assert translate(content) == expected, "Extra newline failed"
+
+# Test lost letters and gap
+# content = "Quartill[a ---]"
+# expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+# assert translate(content) == expected, "Lost letters and gap failed"
 

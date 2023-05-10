@@ -49,8 +49,23 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by EDRParser#misspell.
-    def visitMisspell(self, ctx:EDRParser.MisspellContext):
+    # Visit a parse tree produced by EDRParser#normal_misspell.
+    def visitNormal_misspell(self, ctx:EDRParser.Normal_misspellContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#no_space_misspell.
+    def visitNo_space_misspell(self, ctx:EDRParser.No_space_misspellContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#unsure_misspell.
+    def visitUnsure_misspell(self, ctx:EDRParser.Unsure_misspellContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#unsure_no_space_misspell.
+    def visitUnsure_no_space_misspell(self, ctx:EDRParser.Unsure_no_space_misspellContext):
         return self.visitChildren(ctx)
 
 

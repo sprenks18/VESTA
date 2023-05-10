@@ -29,11 +29,12 @@ JOINED = "<hi rend=\"ligature\">%s</hi>"
 SYMBOL = "<expan><abbr><am><g type=\"%s\"/></am></abbr><ex>%s</ex></expan>"
 LOST_CHARS = "<gap reason=\"lost\" quantity=\"%d\" unit=\"character\" precision=\"low\"/>"
 LOST_CHARS_KNOWN = "<gap reason=\"lost\" quantity=\"%d\" unit=\"character\"/>"
-VACAT = "</space>"
+VACAT = "<space/>"
 IANUA = "<space type=\"door\"/>"
 SUB_AUDIBLE = "<supplied reason=\"subaudible\">%s</supplied>"
 OMITTED = "<supplied reason=\"omitted\">%s</supplied>"
 COLUMN = "<div type=\"textpart\" subtype=\"column\" n=\"a\">%s</div>"
+LOST_AND_GAP = "<supplied reason=\"lost\">%s</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
 
 class EvalVisitor(EDRVisitor):
 
@@ -91,17 +92,36 @@ class EvalVisitor(EDRVisitor):
         l = list(ctx.getChildren())
         desc = self.visit(l[3])
         return FIGURAL % (desc,)
-
-
-    # Visit a parse tree produced by EDRParser#misspell.
-    def visitMisspell(self, ctx:EDRParser.MisspellContext):
+       
+    # Visit a parse tree produced by EDRParser#normal_misspell.
+    def visitNormal_misspell(self, ctx:EDRParser.Normal_misspellContext):
         l = list(ctx.getChildren())
         original = self.visit(l[0])
         correct  = self.visit(l[4])
-        if len(l) == 6:
-            return MISSPELL % (correct, original)
-        else:
-            return MISSPELL_UNCERTAIN % (correct, original)
+        return MISSPELL % (correct, original)
+
+
+    # Visit a parse tree produced by EDRParser#no_space_misspell.
+    def visitNo_space_misspell(self, ctx:EDRParser.No_space_misspellContext):
+        l = list(ctx.getChildren())
+        original = self.visit(l[0])
+        correct  = self.visit(l[3])
+        return MISSPELL % (correct, original)
+
+
+    # Visit a parse tree produced by EDRParser#unsure_misspell.
+    def visitUnsure_misspell(self, ctx:EDRParser.Unsure_misspellContext):
+        l = list(ctx.getChildren())
+        original = self.visit(l[0])
+        correct  = self.visit(l[4])
+        return MISSPELL_UNCERTAIN % (correct, original)
+
+    # Visit a parse tree produced by EDRParser#unsure_no_space_misspell.
+    def visitUnsure_no_space_misspell(self, ctx:EDRParser.Unsure_no_space_misspellContext):
+        l = list(ctx.getChildren())
+        original = self.visit(l[0])
+        correct  = self.visit(l[3])
+        return MISSPELL_UNCERTAIN % (correct, original)
 
     # Visit a parse tree produced by EDRParser#normal_abbr.
     def visitNormal_abbr(self, ctx:EDRParser.Normal_abbrContext):
@@ -305,3 +325,10 @@ class EvalVisitor(EDRVisitor):
         l = list(ctx.getChildren())
         word = self.visit(l[1])
         return OMITTED % (word,)
+    
+    # Visit a parse tree produced by EDRParser#lost_and_gap.
+    # def visitLost_and_gap(self, ctx:EDRParser.Lost_and_gapContext):
+    #     l = list(ctx.getChildren)
+    #     word = self.visit(l[1])
+    #     return LOST_AND_GAP % (word,)
+

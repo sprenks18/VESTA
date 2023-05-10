@@ -18,8 +18,10 @@ term: misspell | figural | abbrev | string | editorial;
 
 figural: L_PAREN L_PAREN COLON desc R_PAREN R_PAREN;
 
-misspell: word SPACE L_PAREN COLON string R_PAREN
-        | word SPACE L_PAREN COLON string QUESTION R_PAREN
+misspell: word SPACE L_PAREN COLON string R_PAREN #normal_misspell
+        | word L_PAREN COLON string R_PAREN #no_space_misspell
+        | word SPACE L_PAREN COLON string QUESTION R_PAREN #unsure_misspell
+        | word L_PAREN COLON string QUESTION R_PAREN #unsure_no_space_misspell
         ;
 
 abbrev: word L_PAREN string R_PAREN #normal_abbr
@@ -131,7 +133,7 @@ LETTER : [A-Za-z]
                '53'|'54'|'55'|'56'|'57'|'58'|'59'|'60'|
                '61'|'62'|'63'|'64'|'65'|'66'|'67'|'68'|'69')';';
 SPACE: [ \t]+;
-NEWLINE: [\n\r]+ | [ ]*'<BR>'[ ]* | [ ]*'<br>'[ ]*;
+NEWLINE: [ ]*[\n\r]+[ ]* | [ ]*'<BR>'[ ]* | [ ]*'<br>'[ ]*;
 PUNCT: '.' | ',';
 NUM: [0-9]+;
 L_ANGLE: '&#12296;' | '<';
