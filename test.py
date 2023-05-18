@@ -239,8 +239,12 @@ assert translate(content) == expected, "Extra newline failed"
 # Test perpendicular text
 content = "<:ad perpendiculum>\nRare lali omnes a"
 expected = "<lb n=\"1\" style=\"text-direction:vertical\"/>\nRare lali omnes a"
-print(translate(content))
 assert translate(content) == expected, "Perpendicular failed"
+
+# Test columns
+content = "<:columna I>\nQuartilla\n<:columna II>\nAugustus"
+expected = "<div type=\"textpart\" subtype=\"column\" n=\"a\">\n<lb n=\"1\"/>\nQuartilla\n</div>\n<div type=\"textpart\" subtype=\"column\" n=\"b\">\n<lb n=\"1\"/>\nAugustus\n</div>"
+assert translate(content) == expected, "Columns failed"
 
 # Test lost letters and gap
 # content = "Quartill[a ---]"

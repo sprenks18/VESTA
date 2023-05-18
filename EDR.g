@@ -1,6 +1,11 @@
 grammar EDR;
 
-root: inscription EOF;
+root: inscription EOF | column EOF;
+
+//columns are just groupings of lines, the lines need to be reset to 0 on a new column
+
+column: COLUMN NEWLINE inscription
+      | COLUMN NEWLINE inscription NEWLINE column;
 
 // line or missing line(s)
 inscription: row NEWLINE inscription #inscription1
@@ -145,3 +150,4 @@ R_ANGLE: '&#12297;' | '>';
 VACAT: L_ANGLE':vacat'R_ANGLE;
 IANUA: L_ANGLE':ianua'R_ANGLE;
 PERPENDICULUM: L_ANGLE':ad perpendiculum'R_ANGLE;
+COLUMN: L_ANGLE ':columna' SPACE [IVX]+ R_ANGLE; 

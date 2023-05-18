@@ -8,6 +8,7 @@ else:
 
 from conversion import greek_letters_dict
 
+COLUMN_COUNT = "<div type=\"textpart\" subtype=\"column\" n=\"%s\">\n%s\n</div>"
 LINE_COUNT = "<lb n=\"%d\"/>\n"
 PERP_LINE  = "<lb n=\"%d\" style=\"text-direction:vertical\"/>\n" 
 MISSPELL = "<choice><reg>%s</reg><orig>%s</orig></choice>"
@@ -41,6 +42,7 @@ class EvalVisitor(EDRVisitor):
 
     def __init__(self):
         self._count = 0
+        self._column = 0
         EDRVisitor.__init__(self)
 
     def getLetter(self, letter):
@@ -48,10 +50,21 @@ class EvalVisitor(EDRVisitor):
             return greek_letters_dict[letter]
         else:
             return letter
-
+        
     def visitRoot(self, ctx:EDRParser.RootContext):
         l = list(ctx.getChildren())
         return self.visit(l[0])
+    
+    # Visit a parse tree produced by EDRParser#column.
+    def visitColumn(self, ctx:EDRParser.ColumnContext):
+        l = list(ctx.getChildren())
+        self._count = 0
+        c = chr(self._column + 97)
+        self._column += 1
+        if len(l) == 3:
+            return COLUMN_COUNT % (c, self.visit(l[2]))
+        else:
+            return COLUMN_COUNT % (c, self.visit(l[2])) + "\n" + self.visit(l[4])
             
     # Visit a parse tree produced by EDRParser#inscription1.
     def visitInscription1(self, ctx:EDRParser.Inscription1Context):
