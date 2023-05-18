@@ -9,6 +9,7 @@ else:
 from conversion import greek_letters_dict
 
 LINE_COUNT = "<lb n=\"%d\"/>\n"
+PERP_LINE  = "<lb n=\"%d\" style=\"text-direction:vertical\"/>\n" 
 MISSPELL = "<choice><reg>%s</reg><orig>%s</orig></choice>"
 MISSPELL_UNCERTAIN = "<choice><reg cert=\"low\">%s</reg><orig>%s</orig></choice>"
 FIGURAL = "<figure><figDesc>%s</figDesc></figure>"
@@ -39,7 +40,7 @@ LOST_AND_GAP = "<supplied reason=\"lost\">%s</supplied> <gap reason=\"lost\" ext
 class EvalVisitor(EDRVisitor):
 
     def __init__(self):
-        self._count = 1
+        self._count = 0
         EDRVisitor.__init__(self)
 
     def getLetter(self, letter):
@@ -50,24 +51,44 @@ class EvalVisitor(EDRVisitor):
 
     def visitRoot(self, ctx:EDRParser.RootContext):
         l = list(ctx.getChildren())
-        return LINE_COUNT % (self._count) + self.visit(l[0])
+        return self.visit(l[0])
             
     # Visit a parse tree produced by EDRParser#inscription1.
     def visitInscription1(self, ctx:EDRParser.Inscription1Context):
         l = list(ctx.getChildren())
         self._count += 1
-        return self.visit(l[0]) + "\n" + LINE_COUNT % (self._count,) + self.visit(l[2])
+        return LINE_COUNT % (self._count) + self.visit(l[0]) + "\n" + self.visit(l[2])
 
 
     # Visit a parse tree produced by EDRParser#inscription2.
     def visitInscription2(self, ctx:EDRParser.Inscription2Context):
         l = list(ctx.getChildren())
-        return self.visit(l[0])
+        self._count += 1
+        return LINE_COUNT % (self._count) + self.visit(l[0])
     
     # Visit a parse tree produced by EDRParser#inscription3.
     def visitInscription3(self, ctx:EDRParser.Inscription3Context):
         l = list(ctx.getChildren())
+        self._count += 1
+        return LINE_COUNT % (self._count) + self.visit(l[0])
+    
+    # Visit a parse tree produced by EDRParser#inscription4.
+    def visitInscription4(self, ctx:EDRParser.Inscription4Context):
+        l = list(ctx.getChildren())
+        self._count += 1
+        return self.visit(l[0]) + "\n" + self.visit(l[2])
+
+
+    # Visit a parse tree produced by EDRParser#inscription5.
+    def visitInscription5(self, ctx:EDRParser.Inscription5Context):
+        l = list(ctx.getChildren())
         return self.visit(l[0])
+    
+    # Visit a parse tree produced by EDRParser#perp.
+    def visitPerp(self, ctx:EDRParser.PerpContext):
+        l = list(ctx.getChildren())
+        self._count += 1
+        return PERP_LINE % (self._count) + self.visit(l[2])
         
     # Visit a parse tree produced by EDRParser#row.
     def visitRow(self, ctx:EDRParser.RowContext):

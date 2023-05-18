@@ -29,8 +29,23 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by EDRParser#inscription4.
+    def visitInscription4(self, ctx:EDRParser.Inscription4Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#inscription5.
+    def visitInscription5(self, ctx:EDRParser.Inscription5Context):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by EDRParser#row.
     def visitRow(self, ctx:EDRParser.RowContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#perp.
+    def visitPerp(self, ctx:EDRParser.PerpContext):
         return self.visitChildren(ctx)
 
 

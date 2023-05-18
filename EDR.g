@@ -6,9 +6,13 @@ root: inscription EOF;
 inscription: row NEWLINE inscription #inscription1
            | row #inscription2
            | row NEWLINE #inscription3
+           | perp NEWLINE inscription #inscription4
+           | perp #inscription5
            ;
 
 row: line | lost_lines_unknown | lost_lines;
+
+perp: PERPENDICULUM NEWLINE line;
 
 line: term
     | term SPACE line
@@ -140,3 +144,4 @@ L_ANGLE: '&#12296;' | '<';
 R_ANGLE: '&#12297;' | '>';
 VACAT: L_ANGLE':vacat'R_ANGLE;
 IANUA: L_ANGLE':ianua'R_ANGLE;
+PERPENDICULUM: L_ANGLE':ad perpendiculum'R_ANGLE;

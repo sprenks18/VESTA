@@ -236,6 +236,12 @@ content = "Ic (:hic) sumus \n"
 expected = "<lb n=\"1\"/>\n<choice><reg>hic</reg><orig>Ic</orig></choice> sumus"
 assert translate(content) == expected, "Extra newline failed"
 
+# Test perpendicular text
+content = "<:ad perpendiculum>\nRare lali omnes a"
+expected = "<lb n=\"1\" style=\"text-direction:vertical\"/>\nRare lali omnes a"
+print(translate(content))
+assert translate(content) == expected, "Perpendicular failed"
+
 # Test lost letters and gap
 # content = "Quartill[a ---]"
 # expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
