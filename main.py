@@ -1,6 +1,6 @@
 from antlr4 import *
-from EDRLexer import EDRLexer
-from EDRParser import EDRParser
+from grammar.EDRLexer import EDRLexer
+from grammar.EDRParser import EDRParser
 from eval_visitor import EvalVisitor
 
 def translate(text):

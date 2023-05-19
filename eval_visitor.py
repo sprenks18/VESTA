@@ -1,6 +1,6 @@
 
-from EDRVisitor import EDRVisitor
-from EDRParser import EDRParser
+from grammar.EDRVisitor import EDRVisitor
+from grammar.EDRParser import EDRParser
 from utils.conversion import greek_letters_dict
 from translations.epidoc import *
 
