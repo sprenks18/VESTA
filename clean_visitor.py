@@ -6,7 +6,7 @@ else:
     from EDRVisitor import EDRVisitor
     from EDRParser import EDRParser
 
-from conversion import greek_letters_dict
+from utils.conversion import greek_letters_dict
 
 FIGURAL = "((:%s))"
 

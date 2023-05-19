@@ -1,23 +1,23 @@
 grammar EDR;
 
-root: inscription EOF | column EOF;
+root: column EOF;
 
-//columns are just groupings of lines, the lines need to be reset to 0 on a new column
-
-column: COLUMN NEWLINE inscription
+column: inscription
+      | COLUMN NEWLINE inscription
       | COLUMN NEWLINE inscription NEWLINE column;
 
-// line or missing line(s)
-inscription: row NEWLINE inscription #inscription1
-           | row #inscription2
-           | row NEWLINE #inscription3
-           | perp NEWLINE inscription #inscription4
-           | perp #inscription5
+inscription: content NEWLINE inscription
+           | content NEWLINE
+           | content
            ;
+
+content: horz | perp;
 
 row: line | lost_lines_unknown | lost_lines;
 
-perp: PERPENDICULUM NEWLINE line;
+perp: PERPENDICULUM NEWLINE row;
+
+horz: row;
 
 line: term
     | term SPACE line
@@ -135,14 +135,17 @@ UNDERLINE: '&#818;';
 CIRCUMFLEX: '&#770;';
 DOT: '&#803;';
 LETTER : [A-Za-z]
-       | '&#9'('13'|'14'|'15'|'16'|'17'|'18'|'19'|'20'|
+       | CAPITAL_GREEK
+       | LOWER_GREEK;
+CAPITAL_GREEK: '&#9'('13'|'14'|'15'|'16'|'17'|'18'|'19'|'20'|
                '21'|'22'|'23'|'24'|'25'|'26'|'27'|'28'|
-               '29'|'31'|'32'|'33'|'34'|'35'|'36'|'37')';'
-       | '&#9'('45'|'46'|'47'|'48'|'49'|'50'|'51'|'52'|
-               '53'|'54'|'55'|'56'|'57'|'58'|'59'|'60'|
-               '61'|'62'|'63'|'64'|'65'|'66'|'67'|'68'|'69')';';
+               '29'|'31'|'32'|'33'|'34'|'35'|'36'|'37')';';
+LOWER_GREEK: '&#9'('45'|'46'|'47'|'48'|'49'|'50'|'51'|'52'|
+             '53'|'54'|'55'|'56'|'57'|'58'|'59'|'60'|
+             '61'|'62'|'63'|'64'|'65'|'66'|'67'|'68'|'69')';';
 SPACE: [ \t]+;
-NEWLINE: [ ]*[\n\r]+[ ]* | [ ]*'<BR>'[ ]* | [ ]*'<br>'[ ]*;
+NEWLINE: [ ]* (LINE_BREAK)+ [ ]*;
+LINE_BREAK: [\n\r] | '<BR>' | '<br>';
 PUNCT: '.' | ',';
 NUM: [0-9]+;
 L_ANGLE: '&#12296;' | '<';
