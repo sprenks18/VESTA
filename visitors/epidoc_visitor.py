@@ -221,7 +221,7 @@ class EpidocVisitor(EDRVisitor):
     
     def visitErased(self, ctx:EDRParser.ErasedContext):
         l = list(ctx.getChildren())
-        return ERASED % (self.visit(l[2]),)
+        return ERASED % (self.visit(l[1]),)
     
     def visitIllegible(self, ctx:EDRParser.IllegibleContext):
         l = list(ctx.getChildren())

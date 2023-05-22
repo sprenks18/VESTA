@@ -126,6 +126,11 @@ content  = "[[Neronis]] Caesaris"
 expected = "<lb n=\"1\"/>\n<del rend=\"erasure\"><supplied reason=\"lost\">Neronis</supplied></del> Caesaris"
 assert translate(content) == expected, "Erased failed"
 
+# Test erased big brackets
+content  = "&#12314;Neronis&#12315; Caesaris"
+expected = "<lb n=\"1\"/>\n<del rend=\"erasure\"><supplied reason=\"lost\">Neronis</supplied></del> Caesaris"
+assert translate(content) == expected, "Erased with big brackets failed"
+
 # Test illegible
 content  = "Ver+++"
 expected = "<lb n=\"1\"/>\nVer<gap reason=\"illegible\" quantity=\"3\" unit=\"character\"/>"

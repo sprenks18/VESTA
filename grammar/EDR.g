@@ -73,7 +73,7 @@ dot_helper: dot_helper LETTER DOT
           | LETTER DOT
           ;
 
-erased: L_BRACKET L_BRACKET line R_BRACKET R_BRACKET;
+erased: BIG_L_BRACKET line BIG_R_BRACKET;
 
 lost_chunk: L_BRACKET line R_BRACKET
           | L_BRACKET line QUESTION R_BRACKET
@@ -128,6 +128,8 @@ L_PAREN: '(';
 R_PAREN: ')';
 L_BRACKET: '[';
 R_BRACKET: ']';
+BIG_L_BRACKET: '&#12314;' | '[[';
+BIG_R_BRACKET: '&#12315;' | ']]';
 L_CURLY: '{';
 R_CURLY: '}';
 COLON: ':';
@@ -140,13 +142,15 @@ CIRCUMFLEX: '&#770;';
 DOT: '&#803;';
 LETTER : [A-Za-z]
        | CAPITAL_GREEK
-       | LOWER_GREEK;
+       | LOWER_GREEK
+       | OTHER_LETTERS;
 CAPITAL_GREEK: '&#9'('13'|'14'|'15'|'16'|'17'|'18'|'19'|'20'|
                '21'|'22'|'23'|'24'|'25'|'26'|'27'|'28'|
                '29'|'31'|'32'|'33'|'34'|'35'|'36'|'37')';';
 LOWER_GREEK: '&#9'('45'|'46'|'47'|'48'|'49'|'50'|'51'|'52'|
              '53'|'54'|'55'|'56'|'57'|'58'|'59'|'60'|
              '61'|'62'|'63'|'64'|'65'|'66'|'67'|'68'|'69')';';
+OTHER_LETTERS: '&#390;';
 SPACE: [ \t]+;
 NEWLINE: [ ]* (LINE_BREAK)+ [ ]*;
 LINE_BREAK: [\n\r] | '<BR>' | '<br>';
