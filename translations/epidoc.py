@@ -1,6 +1,9 @@
+
 COLUMN_COUNT = "<div type=\"textpart\" subtype=\"column\" n=\"%s\">\n%s\n</div>"
 LINE_COUNT = "<lb n=\"%d\"/>\n"
+NO_BREAK = "<lb n=\"%d\" break=\"no\"/>\n"
 PERP_LINE  = "<lb n=\"%d\" style=\"text-direction:vertical\"/>\n" 
+PERP_NO_BREAK  = "<lb n=\"%d\" style=\"text-direction:vertical\" break=\"no\"/>\n" 
 MISSPELL = "<choice><reg>%s</reg><orig>%s</orig></choice>"
 MISSPELL_UNCERTAIN = "<choice><reg cert=\"low\">%s</reg><orig>%s</orig></choice>"
 FIGURAL = "<figure><figDesc>%s</figDesc></figure>"

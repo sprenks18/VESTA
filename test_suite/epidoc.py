@@ -4,7 +4,7 @@ As interesting and complicated examples are found they should be added here.
 Examples that break the parser should be added here before and after the fix is applied.
 """
 
-from main import translate
+from main import translateToEpidoc as translate
 
 # Test newlines (\n)
 content  = "Mortus\nErcolanius"
@@ -245,6 +245,16 @@ assert translate(content) == expected, "Perpendicular failed"
 content = "<:columna I>\nQuartilla\n<:columna II>\nAugustus"
 expected = "<div type=\"textpart\" subtype=\"column\" n=\"a\">\n<lb n=\"1\"/>\nQuartilla\n</div>\n<div type=\"textpart\" subtype=\"column\" n=\"b\">\n<lb n=\"1\"/>\nAugustus\n</div>"
 assert translate(content) == expected, "Columns failed"
+
+# Test word break across line text
+content = "Ma=\ngno ubique"
+expected = "<lb n=\"1\"/>\nMa\n<lb n=\"2\" break=\"no\"/>\ngno ubique"
+assert translate(content) == expected, "Word break failed"
+
+# Test mix of word breaks and non-word breaks
+content = "Ma=\ngno ubique\nAugustus"
+expected = "<lb n=\"1\"/>\nMa\n<lb n=\"2\" break=\"no\"/>\ngno ubique\n<lb n=\"3\"/>\nAugustus"
+assert translate(content) == expected, "Mix of word breaks and non-word breaks failed"
 
 # Test lost letters and gap
 # content = "Quartill[a ---]"

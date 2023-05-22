@@ -6,10 +6,13 @@ column: inscription
       | COLUMN NEWLINE inscription
       | COLUMN NEWLINE inscription NEWLINE column;
 
-inscription: content NEWLINE inscription
-           | content NEWLINE
-           | content
+inscription: content NEWLINE inscription #multi_line_inscription
+           | content continuation #no_word_break
+           | content NEWLINE #excess_new_line
+           | content #single_line_inscription
            ;
+
+continuation: EQUAL NEWLINE inscription;
 
 content: horz | perp;
 
@@ -131,6 +134,7 @@ COLON: ':';
 QUESTION: '?';
 DASH: '-';
 PLUS: '+';
+EQUAL: '=';
 UNDERLINE: '&#818;';
 CIRCUMFLEX: '&#770;';
 DOT: '&#803;';

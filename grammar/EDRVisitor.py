@@ -19,8 +19,28 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by EDRParser#inscription.
-    def visitInscription(self, ctx:EDRParser.InscriptionContext):
+    # Visit a parse tree produced by EDRParser#multi_line_inscription.
+    def visitMulti_line_inscription(self, ctx:EDRParser.Multi_line_inscriptionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#no_word_break.
+    def visitNo_word_break(self, ctx:EDRParser.No_word_breakContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#excess_new_line.
+    def visitExcess_new_line(self, ctx:EDRParser.Excess_new_lineContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#single_line_inscription.
+    def visitSingle_line_inscription(self, ctx:EDRParser.Single_line_inscriptionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#continuation.
+    def visitContinuation(self, ctx:EDRParser.ContinuationContext):
         return self.visitChildren(ctx)
 
 
