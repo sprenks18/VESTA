@@ -2,11 +2,11 @@
 from benchmarks import data_test
 
 # Unit Tests
-TEST_EPIDOC = False
+TEST_EPIDOC = True
 TEST_CLEAN  = False
 
 #Benchmarks
-EDR_DATA = True
+EDR_DATA = False
 
 if TEST_EPIDOC:
     import test_suite.epidoc

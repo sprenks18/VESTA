@@ -299,9 +299,42 @@ class EpidocVisitor(EDRVisitor):
         word = self.visit(l[1])
         return OMITTED % (word,)
     
-    # Visit a parse tree produced by EDRParser#lost_and_gap.
-    # def visitLost_and_gap(self, ctx:EDRParser.Lost_and_gapContext):
-    #     l = list(ctx.getChildren)
-    #     word = self.visit(l[1])
-    #     return LOST_AND_GAP % (word,)
+    def visitLost_with_gap(self, ctx:EDRParser.Lost_with_gapContext):
+        l = list(ctx.getChildren())
+        print("Here!")
+        word = self.visit(l[1])
+        return LOST_AND_GAP % (word,)
+    
+    def visitMissing_chunk(self, ctx:EDRParser.Missing_chunkContext):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
 
+    def visitStandard_chunk(self, ctx:EDRParser.Standard_chunkContext):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
+    
+    def visitLine_in_bracket(self, ctx:EDRParser.Line_in_bracketContext):
+        l = list(ctx.getChildren())
+        if len(l) == 3:
+            return self.visit(l[0]) + " " + self.visit(l[2])
+        else:
+            return self.visit(l[0])
+
+    def visitTerm_in_bracket(self, ctx:EDRParser.Term_in_bracketContext):
+        l = list(ctx.getChildren())
+        return self.visit(l[0])
+
+    def visitString_in_bracket(self, ctx:EDRParser.String_in_bracketContext):
+        l = list(ctx.getChildren())
+        if len(l) == 3:
+            return self.visit(l[0]) + " " + self.visit(l[2])
+        else:
+            return self.visit(l[0])
+
+
+    def visitWord_in_bracket(self, ctx:EDRParser.Word_in_bracketContext):
+        l = list(ctx.getChildren())
+        if len(l) == 2:
+            return self.visit(l[0]) + self.visit(l[1])
+        else:
+            return self.visit(l[0])

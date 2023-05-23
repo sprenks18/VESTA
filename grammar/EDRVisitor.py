@@ -134,6 +134,36 @@ class EDRVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by EDRParser#line_in_bracket.
+    def visitLine_in_bracket(self, ctx:EDRParser.Line_in_bracketContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#term_in_bracket.
+    def visitTerm_in_bracket(self, ctx:EDRParser.Term_in_bracketContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#string_in_bracket.
+    def visitString_in_bracket(self, ctx:EDRParser.String_in_bracketContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#word_in_bracket.
+    def visitWord_in_bracket(self, ctx:EDRParser.Word_in_bracketContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#missing_chunk.
+    def visitMissing_chunk(self, ctx:EDRParser.Missing_chunkContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#standard_chunk.
+    def visitStandard_chunk(self, ctx:EDRParser.Standard_chunkContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by EDRParser#chunk.
     def visitChunk(self, ctx:EDRParser.ChunkContext):
         return self.visitChildren(ctx)
@@ -171,6 +201,11 @@ class EDRVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by EDRParser#lost_chunk.
     def visitLost_chunk(self, ctx:EDRParser.Lost_chunkContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by EDRParser#lost_with_gap.
+    def visitLost_with_gap(self, ctx:EDRParser.Lost_with_gapContext):
         return self.visitChildren(ctx)
 
 

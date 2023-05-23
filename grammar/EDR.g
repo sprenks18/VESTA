@@ -54,10 +54,23 @@ string: word SPACE string
 
 word: word chunk | chunk;
 
-// The order of these matters (lost chunk is technically recursive [TODO - fix this])
-chunk: normal_chunk | under_chunk | dot_chunk | erased | lost_chunk
-     | gap_unknown | illegible | surplus | joined | symbol | lost_chars
-     | lost_chars_known | omitted;
+line_in_bracket: term_in_bracket
+    | term_in_bracket SPACE line_in_bracket
+    ;
+
+term_in_bracket: misspell | figural | abbrev | string_in_bracket | editorial;
+
+string_in_bracket: string_in_bracket SPACE word_in_bracket | word_in_bracket;
+
+// Brackets can contain all types except other brackets
+word_in_bracket: word_in_bracket standard_chunk | standard_chunk;
+
+missing_chunk: lost_chunk | lost_with_gap | lost_chars | lost_chars_known | gap_unknown;
+
+standard_chunk: normal_chunk | under_chunk | dot_chunk | erased
+              | illegible | surplus | joined | symbol | omitted;
+
+chunk:  missing_chunk | standard_chunk;
 
 normal_chunk: LETTER normal_chunk | LETTER;
 
@@ -75,9 +88,11 @@ dot_helper: dot_helper LETTER DOT
 
 erased: BIG_L_BRACKET line BIG_R_BRACKET;
 
-lost_chunk: L_BRACKET line R_BRACKET
-          | L_BRACKET line QUESTION R_BRACKET
+lost_chunk: L_BRACKET line_in_bracket R_BRACKET
+          | L_BRACKET line_in_bracket QUESTION R_BRACKET
           ;
+
+lost_with_gap: L_BRACKET line_in_bracket SPACE DASH DASH DASH R_BRACKET;
 
 gap_unknown: L_BRACKET DASH DASH DASH R_BRACKET
            | L_BRACKET SPACE DASH SPACE DASH SPACE DASH SPACE R_BRACKET
@@ -118,8 +133,8 @@ editorial: vacat | ianua | subaudible;
 
 vacat: VACAT;
 ianua: IANUA;
-subaudible: L_ANGLE COLON normal_chunk R_ANGLE
-       | L_PAREN normal_chunk R_PAREN;
+subaudible: L_ANGLE COLON desc R_ANGLE
+       | L_PAREN desc R_PAREN;
 
 omitted: L_ANGLE normal_chunk R_ANGLE;
 
@@ -158,7 +173,7 @@ PUNCT: '.' | ',';
 NUM: [0-9]+;
 L_ANGLE: '&#12296;' | '<';
 R_ANGLE: '&#12297;' | '>';
-VACAT: L_ANGLE':vacat'R_ANGLE;
-IANUA: L_ANGLE':ianua'R_ANGLE;
+VACAT: L_ANGLE COLON 'vacat' R_ANGLE;
+IANUA: L_ANGLE COLON 'ianua' R_ANGLE;
 PERPENDICULUM: L_ANGLE':ad perpendiculum'R_ANGLE;
 COLUMN: L_ANGLE ':columna' SPACE [IVX]+ R_ANGLE; 

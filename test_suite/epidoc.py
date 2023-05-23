@@ -226,6 +226,11 @@ content = "(servus)"
 expected = "<lb n=\"1\"/>\n<supplied reason=\"subaudible\">servus</supplied>"
 assert translate(content) == expected, "Subaudible (parens) failed"
 
+# Test subaudible multiple words brackets
+content = "&#12296;:servus et Augustus&#12297;"
+expected = "<lb n=\"1\"/>\n<supplied reason=\"subaudible\">servus et Augustus</supplied>"
+assert translate(content) == expected, "Subaudible multiple words (brackets) failed"
+
 # Test omitted parens
 content = "<Aug>ustus"
 expected = "<lb n=\"1\"/>\n<supplied reason=\"omitted\">Aug</supplied>ustus"
@@ -262,7 +267,7 @@ expected = "<lb n=\"1\"/>\nMa\n<lb n=\"2\" break=\"no\"/>\ngno ubique\n<lb n=\"3
 assert translate(content) == expected, "Mix of word breaks and non-word breaks failed"
 
 # Test lost letters and gap
-# content = "Quartill[a ---]"
-# expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
-# assert translate(content) == expected, "Lost letters and gap failed"
+content = "Quartill[a ---]"
+expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+assert translate(content) == expected, "Lost letters and gap failed"
 
