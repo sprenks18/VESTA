@@ -25,5 +25,6 @@ def successRate(filename, failname):
         for i in ids:
             file.write(i + "\n")
         file.write("Successes: " + str(success) + "\n")
-        file.write("Failures: " + str(fail_count))
+        file.write("Failures: " + str(fail_count) + "\n")
+        file.write("Success Rate: " + str(success / (success + fail_count) * 100) + "%")
     

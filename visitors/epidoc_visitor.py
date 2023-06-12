@@ -301,7 +301,6 @@ class EpidocVisitor(EDRVisitor):
     
     def visitLost_with_gap(self, ctx:EDRParser.Lost_with_gapContext):
         l = list(ctx.getChildren())
-        print("Here!")
         word = self.visit(l[1])
         return LOST_AND_GAP % (word,)
     

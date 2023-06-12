@@ -268,6 +268,16 @@ assert translate(content) == expected, "Mix of word breaks and non-word breaks f
 
 # Test lost letters and gap
 content = "Quartill[a ---]"
-expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied> <gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied><gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
 assert translate(content) == expected, "Lost letters and gap failed"
+
+# Test lost letters and gap (no space)
+content = "Quartill[a---]"
+expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied><gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+assert translate(content) == expected, "Lost letters and gap with no space failed"
+
+# Test lost letters and gap (all spaces)
+content = "Quartill[a - - -]"
+expected = "<lb n=\"1\"/>\nQuartill<supplied reason=\"lost\">a</supplied><gap reason=\"lost\" extent=\"unknown\" unit=\"character\"/>"
+assert translate(content) == expected, "Lost letters and gap with all spaces failed"
 

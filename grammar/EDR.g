@@ -92,7 +92,11 @@ lost_chunk: L_BRACKET line_in_bracket R_BRACKET
           | L_BRACKET line_in_bracket QUESTION R_BRACKET
           ;
 
-lost_with_gap: L_BRACKET line_in_bracket SPACE DASH DASH DASH R_BRACKET;
+lost_with_gap: L_BRACKET line_in_bracket SPACE DASH DASH DASH R_BRACKET
+             | L_BRACKET line_in_bracket SPACE DASH SPACE DASH SPACE DASH R_BRACKET
+             | L_BRACKET line_in_bracket DASH DASH DASH R_BRACKET
+             | L_BRACKET line_in_bracket DASH SPACE DASH SPACE DASH R_BRACKET
+             ;
 
 gap_unknown: L_BRACKET DASH DASH DASH R_BRACKET
            | L_BRACKET SPACE DASH SPACE DASH SPACE DASH SPACE R_BRACKET
